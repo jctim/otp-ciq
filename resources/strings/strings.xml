@@ -1,0 +1,49 @@
+<strings>
+
+    <string id="AppName">OneTimePassword Widget</string>
+
+    <string id="BackgroundColorTitle">Background Color</string>
+    <string id="ForegroundColorTitle">Foreground Color</string>
+
+    <string id="ColorBlack">Black</string>
+    <string id="ColorDarkGray">Dark Gray</string>
+    <string id="ColorLightGray">Light Gray</string>
+    <string id="ColorWhite">White</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorGreen">Green</string>
+
+    <string id="Code1Enabled">Code 1 Enabled?</string>
+    <string id="Code2Enabled">Code 2 Enabled?</string>
+    <string id="Code3Enabled">Code 3 Enabled?</string>
+    <string id="Code4Enabled">Code 4 Enabled?</string>
+    <string id="Code5Enabled">Code 5 Enabled?</string>
+    <string id="Code6Enabled">Code 6 Enabled?</string>
+    <string id="Code7Enabled">Code 7 Enabled?</string>
+    <string id="Code8Enabled">Code 8 Enabled?</string>
+    <string id="Code9Enabled">Code 9 Enabled?</string>
+    <string id="Code10Enabled">Code 10 Enabled?</string>
+
+    
+    <string id="Code1Name">Code 1 Name</string>
+    <string id="Code2Name">Code 2 Name</string>
+    <string id="Code3Name">Code 3 Name</string>
+    <string id="Code4Name">Code 4 Name</string>
+    <string id="Code5Name">Code 5 Name</string>
+    <string id="Code6Name">Code 6 Name</string>
+    <string id="Code7Name">Code 7 Name</string>
+    <string id="Code8Name">Code 8 Name</string>
+    <string id="Code9Name">Code 9 Name</string>
+    <string id="Code10Name">Code 10 Name</string>
+
+    <string id="Code1Secret">Code 1 Secret</string>
+    <string id="Code2Secret">Code 2 Secret</string>
+    <string id="Code3Secret">Code 3 Secret</string>
+    <string id="Code4Secret">Code 4 Secret</string>
+    <string id="Code5Secret">Code 5 Secret</string>
+    <string id="Code6Secret">Code 6 Secret</string>
+    <string id="Code7Secret">Code 7 Secret</string>
+    <string id="Code8Secret">Code 8 Secret</string>
+    <string id="Code9Secret">Code 9 Secret</string>
+    <string id="Code10Secret">Code 10 Secret</string>
+
+</strings>

@@ -1,0 +1,130 @@
+<settings>
+
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Code 1 -->
+    <setting propertyKey="@Properties.Code1Enabled" title="@Strings.Code1Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code1Name" title="@Strings.Code1Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code1Secret" title="@Strings.Code1Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 2 -->
+    <setting propertyKey="@Properties.Code2Enabled" title="@Strings.Code2Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code2Name" title="@Strings.Code2Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code2Secret" title="@Strings.Code2Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 3 -->
+    <setting propertyKey="@Properties.Code3Enabled" title="@Strings.Code3Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code3Name" title="@Strings.Code3Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code3Secret" title="@Strings.Code3Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 4 -->
+    <setting propertyKey="@Properties.Code4Enabled" title="@Strings.Code4Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code4Name" title="@Strings.Code4Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code4Secret" title="@Strings.Code4Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 5 -->
+    <setting propertyKey="@Properties.Code5Enabled" title="@Strings.Code5Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code5Name" title="@Strings.Code5Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code5Secret" title="@Strings.Code5Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 6 -->
+    <setting propertyKey="@Properties.Code6Enabled" title="@Strings.Code6Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code6Name" title="@Strings.Code6Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code6Secret" title="@Strings.Code6Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 7 -->
+    <setting propertyKey="@Properties.Code7Enabled" title="@Strings.Code7Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code7Name" title="@Strings.Code7Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code7Secret" title="@Strings.Code7Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 8 -->
+    <setting propertyKey="@Properties.Code8Enabled" title="@Strings.Code8Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code8Name" title="@Strings.Code8Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code8Secret" title="@Strings.Code8Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 9 -->
+    <setting propertyKey="@Properties.Code9Enabled" title="@Strings.Code9Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code9Name" title="@Strings.Code9Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code9Secret" title="@Strings.Code9Secret">
+        <settingConfig type="password" />
+    </setting>
+
+    <!-- Code 10 -->
+    <setting propertyKey="@Properties.Code10Enabled" title="@Strings.Code10Enabled">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Code10Name" title="@Strings.Code10Name">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Code10Secret" title="@Strings.Code10Secret">
+        <settingConfig type="password" />
+    </setting>
+
+</settings>
