@@ -9,6 +9,13 @@ build:
 	-f ./monkey.jungle \
 	-y $(DEVELOPER_KEY) \
 	-d $(DEVICE)
+	
+build-test:
+	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-test.prg \
+	-f ./monkey.jungle \
+	--unit-test \
+	-y $(DEVELOPER_KEY) \
+	-d $(DEVICE)
 
 buildall:
 	@for device in $(SUPPORTED_DEVICES_LIST); do \
@@ -22,8 +29,14 @@ buildall:
 
 run: build
 	@$(SDK_HOME)/bin/connectiq &&\
-	sleep 3 &&\
 	$(SDK_HOME)/bin/monkeydo bin/$(appName).prg $(DEVICE)
+
+test: build-test
+	@$(SDK_HOME)/bin/connectiq &&\
+	$(SDK_HOME)/bin/monkeydo bin/$(appName)-test.prg $(DEVICE) -t
+
+clean:
+	@rm bin/*
 
 deploy: build
 	@cp bin/$(appName).prg $(DEPLOY)
