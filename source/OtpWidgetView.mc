@@ -1,7 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
-using Toybox.Lang as Lang;
 using Toybox.Application as App;
 
 class OtpWidgetView extends Ui.View {
