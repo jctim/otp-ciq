@@ -1,11 +1,11 @@
 module Constants {
 
     // time consts
-    const MAX_TIME_SEC = 30;
+    const TIME_STEP_SEC = 30;
     const RED_ZONE_SEC = 25;
 
     // ui consts
-    const ANGEL_MULTIPLIER = 360 / MAX_TIME_SEC;
+    const ANGEL_MULTIPLIER = 360 / TIME_STEP_SEC;
     const START_ANGEL = 270;
 
     // property consts

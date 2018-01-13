@@ -17,7 +17,7 @@ class TimerCircleView extends Ui.Drawable {
         var fgColor = AppProps.readProperty(Constants.FG_COLOR_PROP);
 
         var time = System.getClockTime();
-        var secMod = time.sec % Constants.MAX_TIME_SEC;
+        var secMod = time.sec % Constants.TIME_STEP_SEC;
         if (secMod > Constants.RED_ZONE_SEC || secMod == 0) {
             dc.setColor(Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT);
         } else {

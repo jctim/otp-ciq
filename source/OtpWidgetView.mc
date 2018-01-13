@@ -23,17 +23,17 @@ class OtpWidgetView extends Ui.View {
 
     function uiTimerCallback() {
         var time = System.getClockTime();
-        if (time.sec % Constants.MAX_TIME_SEC == 0) {
+        if (time.sec % Constants.TIME_STEP_SEC == 0) {
             // TODO start generating new OTP
         }
-        if (time.sec % Constants.MAX_TIME_SEC == 1) {
+        if (time.sec % Constants.TIME_STEP_SEC == 1) {
             reloadCurrentOtp();
         }
         Ui.requestUpdate();
     }
 
     // stub var and method
-    var currentOtp = 123456;
+    var currentOtp = "123456";
     function reloadCurrentOtp() {
         currentOtp += 1;
     }
@@ -50,7 +50,7 @@ class OtpWidgetView extends Ui.View {
         viewName.setText("Google");
         var viewCode = View.findDrawableById("CodeLabel");
         viewCode.setColor(fgColor);
-        viewCode.setText(currentOtp.format("%06d"));
+        viewCode.setText(currentOtp);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
