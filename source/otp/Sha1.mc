@@ -4,8 +4,8 @@
 //! Based on java implementation http://www.intertwingly.net/stories/2004/07/18/SHA1.java
 module Sha1 {
 
-    hidden const H = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
-    hidden const K = [0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6];
+    const H = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
+    const K = [0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6];
 
     //! Encode given byte array input to SHA1 hash as a byte array
     //! @param [Toybox::Lang::Array] input The byte array to be encrypted
@@ -72,7 +72,7 @@ module Sha1 {
         return res;
     }
 
-    hidden function rotate(num, cnt) {
+    function rotate(num, cnt) {
         var mask = (1 << cnt) - 1;
         var leftPart = (num << cnt) & (~mask);
         var rightPart = (num >> (32 - cnt)) & (mask);

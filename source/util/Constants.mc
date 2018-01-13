@@ -11,4 +11,5 @@ module Constants {
     // property consts
     const BG_COLOR_PROP = "BackgroundColor";
     const FG_COLOR_PROP = "ForegroundColor";
+    const TIME_CIRCLE_COLOR_PROP = "TimeCircleColor";
 }

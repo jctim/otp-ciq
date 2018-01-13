@@ -17,10 +17,10 @@ module Convert {
         return bytes;
     }
 
-    hidden const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-    hidden const BASE32 = ALPHABET.toCharArray();
-    hidden const SHIFT = 5;
-    hidden const CSIZE = 8;
+    const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+    const BASE32 = ALPHABET.toCharArray();
+    const SHIFT = 5;
+    const CSIZE = 8;
 
     function base32decode2HexString(encoded) {
         var encodedChars = encoded.toUpper().toCharArray();

@@ -2,7 +2,7 @@
 //! https://tools.ietf.org/html/rfc2104
 module Hmac {
 
-    hidden const BLOCK_SIZE = 64;
+    const BLOCK_SIZE = 64;
 
     //! Authenticate given text involving SHA1 and secret key
     //! @param [Toybox::Lang::Array] key The byte array of secret key

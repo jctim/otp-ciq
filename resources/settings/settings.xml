@@ -10,8 +10,15 @@
 
     <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
         <settingConfig type="list">
-            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
-            <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000BB">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.TimeCircleColor" title="@Strings.TimeCircleColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x0000BB">@Strings.ColorBlue</listEntry>
             <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
@@ -25,7 +32,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code1Secret" title="@Strings.Code1Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 2 -->
@@ -36,7 +43,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code2Secret" title="@Strings.Code2Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 3 -->
@@ -47,7 +54,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code3Secret" title="@Strings.Code3Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 4 -->
@@ -58,7 +65,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code4Secret" title="@Strings.Code4Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 5 -->
@@ -69,7 +76,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code5Secret" title="@Strings.Code5Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 6 -->
@@ -80,7 +87,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code6Secret" title="@Strings.Code6Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 7 -->
@@ -91,7 +98,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code7Secret" title="@Strings.Code7Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 8 -->
@@ -102,7 +109,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code8Secret" title="@Strings.Code8Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 9 -->
@@ -113,7 +120,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code9Secret" title="@Strings.Code9Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
     <!-- Code 10 -->
@@ -124,7 +131,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Code10Secret" title="@Strings.Code10Secret">
-        <settingConfig type="password" />
+        <settingConfig type="alphaNumeric" />
     </setting>
 
 </settings>

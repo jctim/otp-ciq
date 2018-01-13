@@ -1,0 +1,39 @@
+using Toybox.Application as App;
+using Toybox.System as Sys;
+
+//! App Data is an abstraction to retrieve settings, properties and storage values
+//! for devices with CIQ version before and after 2.4
+module AppData {
+
+    function readStorageValue(propertyName) {
+        if (App has :Storage && App.Storage has :getValue) {
+            return App.Storage.getValue(propertyName);
+        } else {
+            return App.getApp().getProperty(propertyName);
+        }
+    }
+
+    function saveStorageValue(propertyName, propertyValue) {
+        if (App has :Storage && App.Storage has :setValue) {
+            return App.Storage.setValue(propertyName, propertyValue);
+        } else {
+            return App.getApp().setProperty(propertyName, propertyValue);
+        }
+    }
+
+    function readProperty(propertyName) {
+        if (App has :Properties) {
+            return App.Properties.getValue(propertyName);
+        } else {
+            return App.getApp().getProperty(propertyName);
+        }
+    }
+
+    function saveProperty(propertyName, propertyValue) {
+        if (App has :Properties) {
+            return App.Properties.setValue(propertyName, propertyValue);
+        } else {
+            return App.getApp().setProperty(propertyName, propertyValue);
+        }
+    }
+}

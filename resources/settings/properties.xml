@@ -1,7 +1,8 @@
 <properties>
 
     <property id="BackgroundColor" type="number">0x000000</property>
-    <property id="ForegroundColor" type="number">0x0000BB</property>
+    <property id="ForegroundColor" type="number">0xFFFFFF</property>
+    <property id="TimeCircleColor" type="number">0x0000BB</property>
 
     <property id="Code1Enabled" type="boolean">false</property>
     <property id="Code2Enabled" type="boolean">false</property>

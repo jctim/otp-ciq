@@ -5,8 +5,12 @@ using Toybox.Application as App;
 
 class OtpWidgetView extends Ui.View {
 
-    function initialize() {
+    var currentOtp = null;
+    var dataProvider;
+
+    function initialize(dataProvider) {
         View.initialize();
+        self.dataProvider = dataProvider;
     }
 
     // Load your resources here
@@ -18,24 +22,20 @@ class OtpWidgetView extends Ui.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() {
+        reloadCurrentOtp();
         AppTimers.startUiTimer(method(:uiTimerCallback));
     }
 
     function uiTimerCallback() {
         var time = System.getClockTime();
         if (time.sec % Constants.TIME_STEP_SEC == 0) {
-            // TODO start generating new OTP
-        }
-        if (time.sec % Constants.TIME_STEP_SEC == 1) {
             reloadCurrentOtp();
         }
         Ui.requestUpdate();
     }
 
-    // stub var and method
-    var currentOtp = "123456";
     function reloadCurrentOtp() {
-        currentOtp += 1;
+        currentOtp = dataProvider.getCurrentOtp();
     }
 
     // Update the view
@@ -43,14 +43,21 @@ class OtpWidgetView extends Ui.View {
         // Sys.println("on update");
 
         // Update the view
-        var fgColor = AppProps.readProperty(Constants.FG_COLOR_PROP);
+        var fgColor = AppData.readProperty(Constants.FG_COLOR_PROP);
 
-        var viewName = View.findDrawableById("NameLabel");
-        viewName.setColor(fgColor);
-        viewName.setText("Google");
-        var viewCode = View.findDrawableById("CodeLabel");
-        viewCode.setColor(fgColor);
-        viewCode.setText(currentOtp);
+        if (currentOtp != null) {
+            var viewName = View.findDrawableById("NameLabel");
+            viewName.setColor(fgColor);
+            viewName.setText(currentOtp.name);
+
+            var viewCode = View.findDrawableById("CodeLabel");
+            viewCode.setColor(fgColor);
+            viewCode.setText(currentOtp.otp);
+        } else {
+            var viewName = View.findDrawableById("NameLabel");
+            viewName.setColor(fgColor);
+            viewName.setText("No tokens...");
+        }
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);

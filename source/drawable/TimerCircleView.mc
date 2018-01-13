@@ -14,14 +14,13 @@ class TimerCircleView extends Ui.Drawable {
         var x = cr[0];
         var y = cr[1];
         var maxR = cr[2];
-        var fgColor = AppProps.readProperty(Constants.FG_COLOR_PROP);
+        var timeColor = AppData.readProperty(Constants.TIME_CIRCLE_COLOR_PROP);
 
         var time = System.getClockTime();
-        var secMod = time.sec % Constants.TIME_STEP_SEC;
-        if (secMod > Constants.RED_ZONE_SEC || secMod == 0) {
+        if (time.sec % Constants.TIME_STEP_SEC > Constants.RED_ZONE_SEC) {
             dc.setColor(Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT);
         } else {
-            dc.setColor(fgColor, Gfx.COLOR_TRANSPARENT);
+            dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
         }
 
         // draw borders
@@ -33,8 +32,11 @@ class TimerCircleView extends Ui.Drawable {
         // }
 
         // draw time filler
+        if (time.sec % Constants.TIME_STEP_SEC == 0) {
+            return;
+        }
         var angel = time.sec * Constants.ANGEL_MULTIPLIER;
-        for (var i = 2; i <= 6; i++) {
+        for (var i = 1; i <= 6; i++) {
             dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE, Constants.START_ANGEL, Constants.START_ANGEL - angel);
         }
     }

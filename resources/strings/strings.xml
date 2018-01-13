@@ -4,6 +4,7 @@
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
+    <string id="TimeCircleColorTitle">Time Circle Color</string>
 
     <string id="ColorBlack">Black</string>
     <string id="ColorDarkGray">Dark Gray</string>
