@@ -1,6 +1,6 @@
 <strings>
 
-    <string id="AppName">OneTimePassword Widget</string>
+    <string id="AppName">OneTimePassword</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
