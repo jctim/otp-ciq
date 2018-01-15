@@ -2,7 +2,8 @@
 
     <property id="BackgroundColor" type="number">0x000000</property>
     <property id="ForegroundColor" type="number">0xFFFFFF</property>
-    <property id="TimeCircleColor" type="number">0x0000BB</property>
+    <property id="CircleTimerColor" type="number">0x109AD7</property>
+    <property id="CircleTimerArrows" type="boolean">false</property>
 
     <property id="Code1Enabled" type="boolean">false</property>
     <property id="Code2Enabled" type="boolean">false</property>
@@ -15,17 +16,17 @@
     <property id="Code9Enabled" type="boolean">false</property>
     <property id="Code10Enabled" type="boolean">false</property>
 
-    <property id="Code1Name" type="string"></property>
-    <property id="Code2Name" type="string"></property>
-    <property id="Code3Name" type="string"></property>
-    <property id="Code4Name" type="string"></property>
-    <property id="Code5Name" type="string"></property>
-    <property id="Code6Name" type="string"></property>
-    <property id="Code7Name" type="string"></property>
-    <property id="Code8Name" type="string"></property>
-    <property id="Code9Name" type="string"></property>
-    <property id="Code10Name" type="string"></property>
-    
+    <property id="Code1Name" type="string"/>
+    <property id="Code2Name" type="string"/>
+    <property id="Code3Name" type="string"/>
+    <property id="Code4Name" type="string"/>
+    <property id="Code5Name" type="string"/>
+    <property id="Code6Name" type="string"/>
+    <property id="Code7Name" type="string"/>
+    <property id="Code8Name" type="string"/>
+    <property id="Code9Name" type="string"/>
+    <property id="Code10Name" type="string"/>
+
     <property id="Code1Secret" type="string"></property>
     <property id="Code2Secret" type="string"></property>
     <property id="Code3Secret" type="string"></property>

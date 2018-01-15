@@ -27,11 +27,12 @@ class OtpWidgetDelegate extends Ui.InputDelegate {
     }
 
     function toNextOtpUi() {
-        dataProvider.nextOtp();
-        // Ui.requestUpdate();
-        // view.requestUpdate();
-        // view.reloadCurrentOtp();
-        Ui.switchToView(view, self, Ui.SLIDE_LEFT);
+        if (dataProvider.nextOtp()) {
+            // Ui.requestUpdate();
+            // view.requestUpdate();
+            // view.reloadCurrentOtp();
+            Ui.switchToView(view, self, Ui.SLIDE_LEFT);
+        }
     }
 
 }

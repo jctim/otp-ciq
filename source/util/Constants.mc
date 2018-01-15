@@ -1,5 +1,7 @@
 module Constants {
 
+    const MAX_TOKENS = 10;
+
     // time consts
     const TIME_STEP_SEC = 30;
     const RED_ZONE_SEC = 25;
@@ -7,9 +9,11 @@ module Constants {
     // ui consts
     const ANGEL_MULTIPLIER = 360 / TIME_STEP_SEC;
     const START_ANGEL = 270;
+    const ROUND_WIDTH = 12;
 
     // property consts
     const BG_COLOR_PROP = "BackgroundColor";
     const FG_COLOR_PROP = "ForegroundColor";
-    const TIME_CIRCLE_COLOR_PROP = "TimeCircleColor";
+    const CIRCLE_TIMER_COLOR_PROP = "CircleTimerColor";
+    const CIRCLE_TIMER_ARROWS_PROP = "CircleTimerArrows";
 }

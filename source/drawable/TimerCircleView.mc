@@ -14,30 +14,43 @@ class TimerCircleView extends Ui.Drawable {
         var x = cr[0];
         var y = cr[1];
         var maxR = cr[2];
-        var timeColor = AppData.readProperty(Constants.TIME_CIRCLE_COLOR_PROP);
+        var timeColor = AppData.readProperty(Constants.CIRCLE_TIMER_COLOR_PROP);
+        var bgColor = AppData.readProperty(Constants.BG_COLOR_PROP);
+        var useArros = AppData.readProperty(Constants.CIRCLE_TIMER_ARROWS_PROP);
 
-        var time = System.getClockTime();
+        var time   = System.getClockTime();
+
         if (time.sec % Constants.TIME_STEP_SEC > Constants.RED_ZONE_SEC) {
-            dc.setColor(Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT);
-        } else {
-            dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
+            timeColor = Gfx.COLOR_RED;
         }
 
-        // draw borders
-        for (var i = 0; i <= 2; i++) {
-            dc.drawCircle(x, y, maxR - i);
-        }
-        // for (var i = 6; i <= 8; i++) {
-        //     dc.drawCircle(x, y, maxR - i);
-        // }
-
-        // draw time filler
-        if (time.sec % Constants.TIME_STEP_SEC == 0) {
-            return;
-        }
         var angel = time.sec * Constants.ANGEL_MULTIPLIER;
-        for (var i = 1; i <= 6; i++) {
-            dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE, Constants.START_ANGEL, Constants.START_ANGEL - angel);
+        var r     = maxR - (Constants.ROUND_WIDTH / 2);
+
+        if (time.sec % Constants.TIME_STEP_SEC != 0) {
+            // draw main time filler
+            dc.setPenWidth(Constants.ROUND_WIDTH);
+            dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
+            dc.drawArc(x, y, r, Gfx.ARC_CLOCKWISE,
+                       Constants.START_ANGEL, Constants.START_ANGEL - angel);
+
+            if (useArros) {
+                // draw arrows of time filler
+                dc.setPenWidth(1);
+                for (var i = 0; i < Constants.ROUND_WIDTH; i++) {
+                    var shift = i < Constants.ROUND_WIDTH / 2 ? i : Constants.ROUND_WIDTH - i;
+
+                    dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
+                    dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE,
+                               Constants.START_ANGEL - angel + 1,
+                               Constants.START_ANGEL - angel - shift - 1);
+
+                    dc.setColor(bgColor, Gfx.COLOR_TRANSPARENT);
+                    dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE,
+                               Constants.START_ANGEL,
+                               Constants.START_ANGEL - shift);
+                }
+            }
         }
     }
 

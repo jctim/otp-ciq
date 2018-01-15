@@ -1,5 +1,6 @@
 using Toybox.Application as App;
 using Toybox.System as Sys;
+using Toybox.StringUtil as StringUtil;
 
 class OtpToken {
     var name;
@@ -31,9 +32,7 @@ class OtpPassword {
 
 class OtpDataProvider {
 
-    hidden const MAX_TOKENS = 10;
-
-    hidden var enabledTokens = new [0];
+    hidden var enabledTokens = [];
     hidden var currentTokenIdx = -1;
     hidden var maxTokenIdx = -1;
 
@@ -45,17 +44,15 @@ class OtpDataProvider {
         Sys.println("reload data");
 
         // clear current data
-        enabledTokens = new [0];
+        enabledTokens = [];
         currentTokenIdx = -1;
         maxTokenIdx = -1;
 
-        for (var i = 1; i <= MAX_TOKENS; i++) {
-            // TODO save whole dictionary to add storage and clear every reload?
-
+        for (var i = 1; i <= Constants.MAX_TOKENS; i++) {
             var codeEnabledProp = "Code" + i + "Enabled";
             var codeNameProp    = "Code" + i + "Name";
             var codeSecretProp  = "Code" + i + "Secret";
-            var codeTokenKey    = "Code" + i + "Token"; // TODO add prefix AppName.Code1Token etc.
+            var codeTokenKey    = "Code" + i + "Token";
 
             var enabled = AppData.readProperty(codeEnabledProp);
             if (enabled) {
@@ -76,7 +73,7 @@ class OtpDataProvider {
         Sys.println("maxTokenIdx: " + maxTokenIdx);
     }
 
-    function tryRetrieveTokenFromSecretPropIfUpdated(secretPropName, tokenStorageKey) {
+    hidden function tryRetrieveTokenFromSecretPropIfUpdated(secretPropName, tokenStorageKey) {
         Sys.println("try to retrieve token from " + secretPropName);
         var secret = AppData.readProperty(secretPropName);
         if (secret == null || secret.length() == 0) {
@@ -87,33 +84,61 @@ class OtpDataProvider {
             // assume the secret was changed by user, so take it and override it in app storage
             // after that the property should be cleared to hide it from reading by Garmin Connect app next time
             Sys.println("secret is not empty, will update storage with it and clean property...");
+            secret = normalizeSecret(secret);
             AppData.saveStorageValue(tokenStorageKey, secret);
             AppData.saveProperty(secretPropName, "");
             return secret;
         }
     }
 
+    // delete all spaces and all letter to upper case
+    hidden function normalizeSecret(str) {
+        var chars = str.toUpper().toCharArray();
+        chars.removeAll(' ');
+        // Yeah. Why not to use StringUtil::charArrayToString()?
+        // Becasue there is a strage bug here probably in SDK:
+        // StringUtil.charArrayToString() returns non empty String
+        // but method length() of that string returns 0 (!!!)
+        var outStr = "";
+        for (var i = 0; i < chars.size(); i++) {
+            outStr += chars[i];
+        }
+        return outStr;
+
+    }
+
     function getCurrentOtp() {
-        if (currentTokenIdx < 0) {
+        if (currentTokenIdx < 0 || enabledTokens.size() == 0) {
             return null;
         }
+
         var ti = enabledTokens[currentTokenIdx];
         return new OtpPassword(ti.name, Otp.generateTotpSha1(ti.token));
     }
 
     function nextOtp() {
+        if (currentTokenIdx < 0 || maxTokenIdx == 0) {
+            return false;
+        }
+
         currentTokenIdx++;
         if (currentTokenIdx > maxTokenIdx) {
             currentTokenIdx = 0;
         }
         Sys.println("currentTokenIdx: " + currentTokenIdx);
+        return true;
     }
 
     function prevOtp() {
+        if (currentTokenIdx < 0 || maxTokenIdx == 0) {
+            return false;
+        }
+
         currentTokenIdx--;
         if (currentTokenIdx < 0) {
             currentTokenIdx = maxTokenIdx;
         }
         Sys.println("currentTokenIdx: " + currentTokenIdx);
+        return true;
     }
 }

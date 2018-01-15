@@ -4,7 +4,8 @@
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
-    <string id="TimeCircleColorTitle">Time Circle Color</string>
+    <string id="CircleTimerColorTitle">Time Circle Color</string>
+    <string id="CircleTimerArrowsTitle">Use Arrows in Circle Timer</string>
 
     <string id="ColorBlack">Black</string>
     <string id="ColorDarkGray">Dark Gray</string>
@@ -36,15 +37,15 @@
     <string id="Code9Name">Code 9 Name</string>
     <string id="Code10Name">Code 10 Name</string>
 
-    <string id="Code1Secret">Code 1 Secret</string>
-    <string id="Code2Secret">Code 2 Secret</string>
-    <string id="Code3Secret">Code 3 Secret</string>
-    <string id="Code4Secret">Code 4 Secret</string>
-    <string id="Code5Secret">Code 5 Secret</string>
-    <string id="Code6Secret">Code 6 Secret</string>
-    <string id="Code7Secret">Code 7 Secret</string>
-    <string id="Code8Secret">Code 8 Secret</string>
-    <string id="Code9Secret">Code 9 Secret</string>
-    <string id="Code10Secret">Code 10 Secret</string>
+    <string id="Code1Secret">Code 1 Secret Key</string>
+    <string id="Code2Secret">Code 2 Secret Key</string>
+    <string id="Code3Secret">Code 3 Secret Key</string>
+    <string id="Code4Secret">Code 4 Secret Key</string>
+    <string id="Code5Secret">Code 5 Secret Key</string>
+    <string id="Code6Secret">Code 6 Secret Key</string>
+    <string id="Code7Secret">Code 7 Secret Key</string>
+    <string id="Code8Secret">Code 8 Secret Key</string>
+    <string id="Code9Secret">Code 9 Secret Key</string>
+    <string id="Code10Secret">Code 10 Secret Key</string>
 
 </strings>

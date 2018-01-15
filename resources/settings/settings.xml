@@ -3,25 +3,29 @@
     <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
         <settingConfig type="list">
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
-            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
-            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x494848">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0xBBBDBF">@Strings.ColorLightGray</listEntry>
         </settingConfig>
     </setting>
 
     <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
         <settingConfig type="list">
-            <listEntry value="0x0000BB">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x109AD7">@Strings.ColorBlue</listEntry>
             <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.TimeCircleColor" title="@Strings.TimeCircleColorTitle">
+    <setting propertyKey="@Properties.CircleTimerColor" title="@Strings.CircleTimerColorTitle">
         <settingConfig type="list">
-            <listEntry value="0x0000BB">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x109AD7">@Strings.ColorBlue</listEntry>
             <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.CircleTimerArrows" title="@Strings.CircleTimerArrowsTitle">
+        <settingConfig type="boolean" />
     </setting>
 
     <!-- Code 1 -->
