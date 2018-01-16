@@ -28,113 +28,113 @@
         <settingConfig type="boolean" />
     </setting>
 
-    <!-- Code 1 -->
-    <setting propertyKey="@Properties.Code1Enabled" title="@Strings.Code1Enabled">
+    <!-- Account 1 -->
+    <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code1Name" title="@Strings.Code1Name">
+    <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code1Secret" title="@Strings.Code1Secret">
+    <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 2 -->
-    <setting propertyKey="@Properties.Code2Enabled" title="@Strings.Code2Enabled">
+    <!-- Account 2 -->
+    <setting propertyKey="@Properties.Account2Enabled" title="@Strings.Account2Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code2Name" title="@Strings.Code2Name">
+    <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code2Secret" title="@Strings.Code2Secret">
+    <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 3 -->
-    <setting propertyKey="@Properties.Code3Enabled" title="@Strings.Code3Enabled">
+    <!-- Account 3 -->
+    <setting propertyKey="@Properties.Account3Enabled" title="@Strings.Account3Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code3Name" title="@Strings.Code3Name">
+    <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code3Secret" title="@Strings.Code3Secret">
+    <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 4 -->
-    <setting propertyKey="@Properties.Code4Enabled" title="@Strings.Code4Enabled">
+    <!-- Account 4 -->
+    <setting propertyKey="@Properties.Account4Enabled" title="@Strings.Account4Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code4Name" title="@Strings.Code4Name">
+    <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code4Secret" title="@Strings.Code4Secret">
+    <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 5 -->
-    <setting propertyKey="@Properties.Code5Enabled" title="@Strings.Code5Enabled">
+    <!-- Account 5 -->
+    <setting propertyKey="@Properties.Account5Enabled" title="@Strings.Account5Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code5Name" title="@Strings.Code5Name">
+    <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code5Secret" title="@Strings.Code5Secret">
+    <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 6 -->
-    <setting propertyKey="@Properties.Code6Enabled" title="@Strings.Code6Enabled">
+    <!-- Account 6 -->
+    <setting propertyKey="@Properties.Account6Enabled" title="@Strings.Account6Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code6Name" title="@Strings.Code6Name">
+    <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code6Secret" title="@Strings.Code6Secret">
+    <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 7 -->
-    <setting propertyKey="@Properties.Code7Enabled" title="@Strings.Code7Enabled">
+    <!-- Account 7 -->
+    <setting propertyKey="@Properties.Account7Enabled" title="@Strings.Account7Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code7Name" title="@Strings.Code7Name">
+    <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code7Secret" title="@Strings.Code7Secret">
+    <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 8 -->
-    <setting propertyKey="@Properties.Code8Enabled" title="@Strings.Code8Enabled">
+    <!-- Account 8 -->
+    <setting propertyKey="@Properties.Account8Enabled" title="@Strings.Account8Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code8Name" title="@Strings.Code8Name">
+    <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code8Secret" title="@Strings.Code8Secret">
+    <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 9 -->
-    <setting propertyKey="@Properties.Code9Enabled" title="@Strings.Code9Enabled">
+    <!-- Account 9 -->
+    <setting propertyKey="@Properties.Account9Enabled" title="@Strings.Account9Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code9Name" title="@Strings.Code9Name">
+    <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code9Secret" title="@Strings.Code9Secret">
+    <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 
-    <!-- Code 10 -->
-    <setting propertyKey="@Properties.Code10Enabled" title="@Strings.Code10Enabled">
+    <!-- Account 10 -->
+    <setting propertyKey="@Properties.Account10Enabled" title="@Strings.Account10Enabled">
         <settingConfig type="boolean" />
     </setting>
-    <setting propertyKey="@Properties.Code10Name" title="@Strings.Code10Name">
+    <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Code10Secret" title="@Strings.Code10Secret">
+    <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
 

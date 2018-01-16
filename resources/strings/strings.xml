@@ -14,38 +14,18 @@
     <string id="ColorBlue">Blue</string>
     <string id="ColorGreen">Green</string>
 
-    <string id="Code1Enabled">Code 1 Enabled?</string>
-    <string id="Code2Enabled">Code 2 Enabled?</string>
-    <string id="Code3Enabled">Code 3 Enabled?</string>
-    <string id="Code4Enabled">Code 4 Enabled?</string>
-    <string id="Code5Enabled">Code 5 Enabled?</string>
-    <string id="Code6Enabled">Code 6 Enabled?</string>
-    <string id="Code7Enabled">Code 7 Enabled?</string>
-    <string id="Code8Enabled">Code 8 Enabled?</string>
-    <string id="Code9Enabled">Code 9 Enabled?</string>
-    <string id="Code10Enabled">Code 10 Enabled?</string>
-
+    <string id="Account1Enabled">Account 1</string>
+    <string id="Account2Enabled">Account 2</string>
+    <string id="Account3Enabled">Account 3</string>
+    <string id="Account4Enabled">Account 4</string>
+    <string id="Account5Enabled">Account 5</string>
+    <string id="Account6Enabled">Account 6</string>
+    <string id="Account7Enabled">Account 7</string>
+    <string id="Account8Enabled">Account 8</string>
+    <string id="Account9Enabled">Account 9</string>
+    <string id="Account10Enabled">Account 10</string>
     
-    <string id="Code1Name">Code 1 Name</string>
-    <string id="Code2Name">Code 2 Name</string>
-    <string id="Code3Name">Code 3 Name</string>
-    <string id="Code4Name">Code 4 Name</string>
-    <string id="Code5Name">Code 5 Name</string>
-    <string id="Code6Name">Code 6 Name</string>
-    <string id="Code7Name">Code 7 Name</string>
-    <string id="Code8Name">Code 8 Name</string>
-    <string id="Code9Name">Code 9 Name</string>
-    <string id="Code10Name">Code 10 Name</string>
-
-    <string id="Code1Secret">Code 1 Secret Key</string>
-    <string id="Code2Secret">Code 2 Secret Key</string>
-    <string id="Code3Secret">Code 3 Secret Key</string>
-    <string id="Code4Secret">Code 4 Secret Key</string>
-    <string id="Code5Secret">Code 5 Secret Key</string>
-    <string id="Code6Secret">Code 6 Secret Key</string>
-    <string id="Code7Secret">Code 7 Secret Key</string>
-    <string id="Code8Secret">Code 8 Secret Key</string>
-    <string id="Code9Secret">Code 9 Secret Key</string>
-    <string id="Code10Secret">Code 10 Secret Key</string>
+    <string id="AccountName">Account Name</string>
+    <string id="AccountSecret">Account Secret Key</string>
 
 </strings>

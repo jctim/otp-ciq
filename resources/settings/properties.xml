@@ -5,37 +5,37 @@
     <property id="CircleTimerColor" type="number">0x109AD7</property>
     <property id="CircleTimerArrows" type="boolean">false</property>
 
-    <property id="Code1Enabled" type="boolean">false</property>
-    <property id="Code2Enabled" type="boolean">false</property>
-    <property id="Code3Enabled" type="boolean">false</property>
-    <property id="Code4Enabled" type="boolean">false</property>
-    <property id="Code5Enabled" type="boolean">false</property>
-    <property id="Code6Enabled" type="boolean">false</property>
-    <property id="Code7Enabled" type="boolean">false</property>
-    <property id="Code8Enabled" type="boolean">false</property>
-    <property id="Code9Enabled" type="boolean">false</property>
-    <property id="Code10Enabled" type="boolean">false</property>
+    <property id="Account1Enabled" type="boolean">false</property>
+    <property id="Account2Enabled" type="boolean">false</property>
+    <property id="Account3Enabled" type="boolean">false</property>
+    <property id="Account4Enabled" type="boolean">false</property>
+    <property id="Account5Enabled" type="boolean">false</property>
+    <property id="Account6Enabled" type="boolean">false</property>
+    <property id="Account7Enabled" type="boolean">false</property>
+    <property id="Account8Enabled" type="boolean">false</property>
+    <property id="Account9Enabled" type="boolean">false</property>
+    <property id="Account10Enabled" type="boolean">false</property>
 
-    <property id="Code1Name" type="string"/>
-    <property id="Code2Name" type="string"/>
-    <property id="Code3Name" type="string"/>
-    <property id="Code4Name" type="string"/>
-    <property id="Code5Name" type="string"/>
-    <property id="Code6Name" type="string"/>
-    <property id="Code7Name" type="string"/>
-    <property id="Code8Name" type="string"/>
-    <property id="Code9Name" type="string"/>
-    <property id="Code10Name" type="string"/>
+    <property id="Account1Name" type="string"/>
+    <property id="Account2Name" type="string"/>
+    <property id="Account3Name" type="string"/>
+    <property id="Account4Name" type="string"/>
+    <property id="Account5Name" type="string"/>
+    <property id="Account6Name" type="string"/>
+    <property id="Account7Name" type="string"/>
+    <property id="Account8Name" type="string"/>
+    <property id="Account9Name" type="string"/>
+    <property id="Account10Name" type="string"/>
 
-    <property id="Code1Secret" type="string"></property>
-    <property id="Code2Secret" type="string"></property>
-    <property id="Code3Secret" type="string"></property>
-    <property id="Code4Secret" type="string"></property>
-    <property id="Code5Secret" type="string"></property>
-    <property id="Code6Secret" type="string"></property>
-    <property id="Code7Secret" type="string"></property>
-    <property id="Code8Secret" type="string"></property>
-    <property id="Code9Secret" type="string"></property>
-    <property id="Code10Secret" type="string"></property>
+    <property id="Account1Secret" type="string"/>
+    <property id="Account2Secret" type="string"/>
+    <property id="Account3Secret" type="string"/>
+    <property id="Account4Secret" type="string"/>
+    <property id="Account5Secret" type="string"/>
+    <property id="Account6Secret" type="string"/>
+    <property id="Account7Secret" type="string"/>
+    <property id="Account8Secret" type="string"/>
+    <property id="Account9Secret" type="string"/>
+    <property id="Account10Secret" type="string"/>
 
 </properties>

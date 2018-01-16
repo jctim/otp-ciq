@@ -1,6 +1,6 @@
 module Constants {
 
-    const MAX_TOKENS = 10;
+    const MAX_ACCOUNTS = 10;
 
     // time consts
     const TIME_STEP_SEC = 30;

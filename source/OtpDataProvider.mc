@@ -2,39 +2,39 @@ using Toybox.Application as App;
 using Toybox.System as Sys;
 using Toybox.StringUtil as StringUtil;
 
-class OtpToken {
+class Account {
     var name;
-    var token;
+    var secret;
 
-    function initialize(name, token) {
+    function initialize(name, secret) {
         self.name = name;
-        self.token = token;
+        self.secret = secret;
     }
 
     function toString() {
-        return "token[" + name + ":" + token + "]";
+        return "account[" + name + ":" + secret + "]";
     }
 }
 
-class OtpPassword {
+class OtpCode {
     var name;
-    var otp;
+    var code;
 
-    function initialize(name, otp) {
+    function initialize(name, code) {
         self.name = name;
-        self.otp = otp;
+        self.code = code;
     }
 
     function toString() {
-        return "password[" + name + ":" + otp + "]";
+        return "otp[" + name + ":" + code + "]";
     }
 }
 
 class OtpDataProvider {
 
-    hidden var enabledTokens = [];
-    hidden var currentTokenIdx = -1;
-    hidden var maxTokenIdx = -1;
+    hidden var enabledAccounts = [];
+    hidden var currentAccountIdx = -1;
+    hidden var maxAccountIdx = -1;
 
     function initialize() {
         reloadData();
@@ -44,50 +44,50 @@ class OtpDataProvider {
         Sys.println("reload data");
 
         // clear current data
-        enabledTokens = [];
-        currentTokenIdx = -1;
-        maxTokenIdx = -1;
+        enabledAccounts = [];
+        currentAccountIdx = -1;
+        maxAccountIdx = -1;
 
-        for (var i = 1; i <= Constants.MAX_TOKENS; i++) {
-            var codeEnabledProp = "Code" + i + "Enabled";
-            var codeNameProp    = "Code" + i + "Name";
-            var codeSecretProp  = "Code" + i + "Secret";
-            var codeTokenKey    = "Code" + i + "Token";
+        for (var i = 1; i <= Constants.MAX_ACCOUNTS; i++) {
+            var accEnabledProp = "Account" + i + "Enabled";
+            var accNameProp    = "Account" + i + "Name";
+            var accSecretProp  = "Account" + i + "Secret";
+            var accSecretKey   = "Account" + i + "SecretKey";
 
-            var enabled = AppData.readProperty(codeEnabledProp);
+            var enabled = AppData.readProperty(accEnabledProp);
             if (enabled) {
-                var name = AppData.readProperty(codeNameProp);
+                var name = AppData.readProperty(accNameProp);
                 if (!isEmptyString(name)) {
-                    var token = tryRetrieveTokenFromSecretPropIfUpdated(codeSecretProp, codeTokenKey);
-                    if (!isEmptyString(token)) {
-                        enabledTokens.add(new OtpToken(name, token));
+                    var secret = tryRetrieveSecretFromPropsIfUpdated(accSecretProp, accSecretKey);
+                    if (!isEmptyString(secret)) {
+                        enabledAccounts.add(new Account(name, secret));
                     }
                 }
             }
         }
-        if (enabledTokens.size() != 0) {
-            currentTokenIdx = 0;
-            maxTokenIdx = enabledTokens.size() - 1;
+        if (enabledAccounts.size() != 0) {
+            currentAccountIdx = 0;
+            maxAccountIdx = enabledAccounts.size() - 1;
         }
 
-        Sys.println("enabledTokensByIdx: " + enabledTokens);
-        Sys.println("currentTokenIdx: " + currentTokenIdx);
-        Sys.println("maxTokenIdx: " + maxTokenIdx);
+        Sys.println("enabledAccountsByIdx: " + enabledAccounts);
+        Sys.println("currentAccountIdx: " + currentAccountIdx);
+        Sys.println("maxAccountIdx: " + maxAccountIdx);
     }
 
-    hidden function tryRetrieveTokenFromSecretPropIfUpdated(secretPropName, tokenStorageKey) {
-        Sys.println("try to retrieve token from " + secretPropName);
+    hidden function tryRetrieveSecretFromPropsIfUpdated(secretPropName, secretStorageKey) {
+        Sys.println("try to retrieve secret from " + secretPropName);
         var secret = AppData.readProperty(secretPropName);
         if (isEmptyString(secret)) {
             // assume the secret was not changed, and it's should be exist in app storage already
-            Sys.println("secret is empty, read from storage by " + tokenStorageKey);
-            return AppData.readStorageValue(tokenStorageKey);
+            Sys.println("secret is empty, read from storage by " + secretStorageKey);
+            return AppData.readStorageValue(secretStorageKey);
         } else {
             // assume the secret was changed by user, so take it and override it in app storage
             // after that the property should be cleared to hide it from reading by Garmin Connect app next time
             Sys.println("secret is not empty, will update storage with it and clean property...");
             secret = normalizeSecret(secret);
-            AppData.saveStorageValue(tokenStorageKey, secret);
+            AppData.saveStorageValue(secretStorageKey, secret);
             AppData.saveProperty(secretPropName, "");
             return secret;
         }
@@ -117,37 +117,37 @@ class OtpDataProvider {
     }
 
     function getCurrentOtp() {
-        if (currentTokenIdx < 0 || enabledTokens.size() == 0) {
+        if (currentAccountIdx < 0 || enabledAccounts.size() == 0) {
             return null;
         }
 
-        var ti = enabledTokens[currentTokenIdx];
-        return new OtpPassword(ti.name, Otp.generateTotpSha1(ti.token));
+        var acc = enabledAccounts[currentAccountIdx];
+        return new OtpCode(acc.name, Otp.generateTotpSha1(acc.secret));
     }
 
     function nextOtp() {
-        if (currentTokenIdx < 0 || maxTokenIdx == 0) {
+        if (currentAccountIdx < 0 || maxAccountIdx == 0) {
             return false;
         }
 
-        currentTokenIdx++;
-        if (currentTokenIdx > maxTokenIdx) {
-            currentTokenIdx = 0;
+        currentAccountIdx++;
+        if (currentAccountIdx > maxAccountIdx) {
+            currentAccountIdx = 0;
         }
-        Sys.println("currentTokenIdx: " + currentTokenIdx);
+        Sys.println("currentAccountIdx: " + currentAccountIdx);
         return true;
     }
 
     function prevOtp() {
-        if (currentTokenIdx < 0 || maxTokenIdx == 0) {
+        if (currentAccountIdx < 0 || maxAccountIdx == 0) {
             return false;
         }
 
-        currentTokenIdx--;
-        if (currentTokenIdx < 0) {
-            currentTokenIdx = maxTokenIdx;
+        currentAccountIdx--;
+        if (currentAccountIdx < 0) {
+            currentAccountIdx = maxAccountIdx;
         }
-        Sys.println("currentTokenIdx: " + currentTokenIdx);
+        Sys.println("currentAccountIdx: " + currentAccountIdx);
         return true;
     }
 }
