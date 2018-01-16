@@ -57,9 +57,11 @@ class OtpDataProvider {
             var enabled = AppData.readProperty(codeEnabledProp);
             if (enabled) {
                 var name = AppData.readProperty(codeNameProp);
-                var token = tryRetrieveTokenFromSecretPropIfUpdated(codeSecretProp, codeTokenKey);
-                if (token != null && token.length() != 0) {
-                    enabledTokens.add(new OtpToken(name, token));
+                if (!isEmptyString(name)) {
+                    var token = tryRetrieveTokenFromSecretPropIfUpdated(codeSecretProp, codeTokenKey);
+                    if (!isEmptyString(token)) {
+                        enabledTokens.add(new OtpToken(name, token));
+                    }
                 }
             }
         }
@@ -76,7 +78,7 @@ class OtpDataProvider {
     hidden function tryRetrieveTokenFromSecretPropIfUpdated(secretPropName, tokenStorageKey) {
         Sys.println("try to retrieve token from " + secretPropName);
         var secret = AppData.readProperty(secretPropName);
-        if (secret == null || secret.length() == 0) {
+        if (isEmptyString(secret)) {
             // assume the secret was not changed, and it's should be exist in app storage already
             Sys.println("secret is empty, read from storage by " + tokenStorageKey);
             return AppData.readStorageValue(tokenStorageKey);
@@ -91,7 +93,14 @@ class OtpDataProvider {
         }
     }
 
-    // delete all spaces and all letter to upper case
+    hidden function isEmptyString(str) {
+        return str == null || str.length() == 0;
+    }
+
+    //! delete all spaces and upper case all letters
+    //!
+    //! @param [Toybox::Lang::String] str must not be null
+    //! @return [Toybox::Lang::String] normalized string
     hidden function normalizeSecret(str) {
         var chars = str.toUpper().toCharArray();
         chars.removeAll(' ');
