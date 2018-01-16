@@ -23,7 +23,14 @@ module AppData {
 
     function readProperty(propertyName) {
         if (App has :Properties) {
-            return App.Properties.getValue(propertyName);
+            try {
+                return App.Properties.getValue(propertyName);
+            } catch (ex instanceof App.Properties.InvalidKeyException) {
+                // different behaviour on device and simulator:
+                // previously stored empty value (OtpDataProvider:89) for given property works correctly on a simulator
+                // but deletes the property on a device, thus the exception is thrown
+                return null;
+            }
         } else {
             return App.getApp().getProperty(propertyName);
         }
