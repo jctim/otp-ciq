@@ -4,12 +4,21 @@
                     entry="OtpApp" type="widget" minSdkVersion="1.4.0">
 
         <iq:products>
+            <iq:product id="approachs60"/>
+            <iq:product id="d2bravo"/>
+            <iq:product id="d2bravo_titanium"/>
+            <iq:product id="d2charlie"/>
+            <iq:product id="descentmk1"/>
             <iq:product id="fenix3"/>
             <iq:product id="fenix3_hr"/>
-            <iq:product id="vivoactive3"/>
             <iq:product id="fenix5x"/>
             <iq:product id="fenix5"/>
             <iq:product id="fenix5s"/>
+            <iq:product id="fenixchronos"/>
+            <iq:product id="fr645"/>
+            <iq:product id="fr645m"/>
+            <iq:product id="fr935"/>
+            <iq:product id="vivoactive3"/>
         </iq:products>
         <iq:permissions/>
         <iq:languages>
