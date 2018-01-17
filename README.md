@@ -15,7 +15,7 @@ It actually consists of two parts:
 - Support Garmin watches from square family
 
 # Links
-- [Connect IQ Store](https://apps.garmin.com/en-US/apps/06f04875-2e95-4623-984d-5dff0778b2bd)
+- [Connect IQ Store](https://apps.garmin.com/en-US/apps/f341dc64-bf39-4224-9c03-14d2434354a4)
 - [TOTP RFC](https://tools.ietf.org/html/rfc6238)
 
 # License
