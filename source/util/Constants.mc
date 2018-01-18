@@ -11,6 +11,8 @@ module Constants {
     const START_ANGEL = 270;
     const ROUND_WIDTH = 12;
 
+    // storage key const
+    const CURRENT_ACC_IDX_KEY = "CurrentAccountIdx";
     // property consts
     const BG_COLOR_PROP = "BackgroundColor";
     const FG_COLOR_PROP = "ForegroundColor";

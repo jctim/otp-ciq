@@ -56,7 +56,7 @@ class OtpWidgetView extends Ui.View {
         } else {
             var viewName = View.findDrawableById("NameLabel");
             viewName.setColor(fgColor);
-            viewName.setText("No Accounts...");
+            viewName.setText("No Accounts\nSet up in settings");
         }
 
         // Call the parent onUpdate function to redraw the layout

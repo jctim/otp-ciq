@@ -37,11 +37,12 @@ class OtpDataProvider {
     hidden var maxAccountIdx = -1;
 
     function initialize() {
-        reloadData();
+        reloadData(false);
     }
 
-    function reloadData() {
-        Sys.println("reload data");
+    function reloadData(resetCurrentAccountIdx) {
+        Sys.println("reload data. Need to reset currentAccountIdx = " + resetCurrentAccountIdx + "; " +
+                    "currentAccountIdx in storage = " + AppData.readStorageValue(Constants.CURRENT_ACC_IDX_KEY));
 
         // clear current data
         enabledAccounts = [];
@@ -66,26 +67,35 @@ class OtpDataProvider {
             }
         }
         if (enabledAccounts.size() != 0) {
-            currentAccountIdx = 0;
+            // if resetCurrentAccountIdx == true - it was called from App.onSettingsChanged(). Need to reset it to the first token
+            // if resetCurrentAccountIdx == false - it was called from constructor. Need to obtain it from Storage (if exists)
+            if (resetCurrentAccountIdx) {
+                currentAccountIdx = 0;
+            } else {
+                currentAccountIdx = AppData.readStorageValue(Constants.CURRENT_ACC_IDX_KEY);
+                if (currentAccountIdx == null) {
+                    currentAccountIdx = 0;
+                }
+            }
             maxAccountIdx = enabledAccounts.size() - 1;
         }
 
-        Sys.println("enabledAccountsByIdx: " + enabledAccounts);
+        AppData.saveStorageValue(Constants.CURRENT_ACC_IDX_KEY, currentAccountIdx);
+        Sys.println("enabledAccounts: " + enabledAccounts);
         Sys.println("currentAccountIdx: " + currentAccountIdx);
         Sys.println("maxAccountIdx: " + maxAccountIdx);
     }
 
     hidden function tryRetrieveSecretFromPropsIfUpdated(secretPropName, secretStorageKey) {
-        Sys.println("try to retrieve secret from " + secretPropName);
         var secret = AppData.readProperty(secretPropName);
         if (isEmptyString(secret)) {
             // assume the secret was not changed, and it's should be exist in app storage already
-            Sys.println("secret is empty, read from storage by " + secretStorageKey);
+            Sys.println("secret " + secretPropName +  " is empty in properties, will read it from storage...");
             return AppData.readStorageValue(secretStorageKey);
         } else {
             // assume the secret was changed by user, so take it and override it in app storage
             // after that the property should be cleared to hide it from reading by Garmin Connect app next time
-            Sys.println("secret is not empty, will update storage with it and clean property...");
+            Sys.println("secret " + secretPropName +  " is not empty in properties, will update storage with it and clean the property...");
             secret = normalizeSecret(secret);
             AppData.saveStorageValue(secretStorageKey, secret);
             AppData.saveProperty(secretPropName, "");
@@ -134,6 +144,7 @@ class OtpDataProvider {
         if (currentAccountIdx > maxAccountIdx) {
             currentAccountIdx = 0;
         }
+        AppData.saveStorageValue(Constants.CURRENT_ACC_IDX_KEY, currentAccountIdx);
         Sys.println("currentAccountIdx: " + currentAccountIdx);
         return true;
     }
@@ -147,6 +158,7 @@ class OtpDataProvider {
         if (currentAccountIdx < 0) {
             currentAccountIdx = maxAccountIdx;
         }
+        AppData.saveStorageValue(Constants.CURRENT_ACC_IDX_KEY, currentAccountIdx);
         Sys.println("currentAccountIdx: " + currentAccountIdx);
         return true;
     }
