@@ -52,11 +52,12 @@ class OtpWidgetView extends Ui.View {
 
             var viewCode = View.findDrawableById("CodeLabel");
             viewCode.setColor(fgColor);
-            viewCode.setText(currentOtp.code);
+            viewCode.setText(currentOtp.token);
         } else {
             var viewName = View.findDrawableById("NameLabel");
             viewName.setColor(fgColor);
-            viewName.setText("No Accounts\nSet up in settings");
+            viewName.setFont(Gfx.FONT_XTINY);
+            viewName.setText("No Accounts\nSet up in app settings");
         }
 
         // Call the parent onUpdate function to redraw the layout

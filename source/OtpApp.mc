@@ -30,7 +30,7 @@ class OtpApp extends App.AppBase {
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
-        self.dataProvider.reloadData(true);
+        self.dataProvider.reloadData();
         // AppBase.onSettingsChanged();
         // Ui.requestUpdate();
         // view.reloadCurrentOtp();
