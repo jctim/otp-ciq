@@ -1,17 +1,17 @@
 using Toybox.WatchUi as Ui;
-using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
-using Toybox.Application as App;
 
-class OtpWidgetDelegate extends Ui.InputDelegate {
+class OtpWidgetDelegate extends Ui.BehaviorDelegate {
 
-    var view;
+    var mainView;
     var dataProvider;
+    var menuDelegate;
 
-    function initialize(view, dataProvider) {
-        Ui.InputDelegate.initialize();
-        self.view = view;
+    function initialize(mainView, dataProvider) {
+        Ui.BehaviorDelegate.initialize();
+        self.mainView = mainView;
         self.dataProvider = dataProvider;
+        self.menuDelegate = new OtpMenuDelegate(dataProvider);
     }
 
     function onKey(key) {
@@ -26,12 +26,22 @@ class OtpWidgetDelegate extends Ui.InputDelegate {
         }
     }
 
-    function toNextOtpUi() {
+    function onMenu() {
+        var enabledAccounts = dataProvider.getEnabledAccounts();
+        if (enabledAccounts.size() == 0) {
+            return;
+        }
+
+        var menuView = new Ui.Menu();
+        for (var i = 0; i < enabledAccounts.size(); i++) {
+            menuView.addItem(enabledAccounts[i].name, i);
+        }
+        Ui.pushView(menuView, menuDelegate, Ui.SLIDE_UP);
+    }
+
+    hidden function toNextOtpUi() {
         if (dataProvider.nextOtp()) {
-            // Ui.requestUpdate();
-            // view.requestUpdate();
-            // view.reloadCurrentOtp();
-            Ui.switchToView(view, self, Ui.SLIDE_LEFT);
+            Ui.switchToView(mainView, self, Ui.SLIDE_LEFT);
         }
     }
 

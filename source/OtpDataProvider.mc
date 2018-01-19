@@ -175,6 +175,20 @@ class OtpDataProvider {
         return new AccountToken(acc.name, Otp.generateTotpSha1(acc.secret));
     }
 
+    function getEnabledAccounts() {
+        return enabledAccounts;
+    }
+
+    function setCurrentAccountIdx(newAccIdx) {
+        currentAccountIdx = newAccIdx;
+        if (currentAccountIdx > maxAccountIdx) {
+            currentAccountIdx = 0;
+        }
+        AppData.saveStorageValue(Constants.CURRENT_ACC_IDX_KEY, currentAccountIdx);
+        Sys.println("currentAccountIdx: " + currentAccountIdx);
+        return true;
+    }
+
     function nextOtp() {
         if (currentAccountIdx < 0 || maxAccountIdx == 0) {
             return false;
