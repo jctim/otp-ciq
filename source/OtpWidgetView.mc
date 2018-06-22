@@ -24,18 +24,24 @@ class OtpWidgetView extends Ui.View {
     function onShow() {
         reloadCurrentOtp();
         AppTimers.startUiTimer(method(:uiTimerCallback));
+        AppTimers.startOtpTimer(method(:otpTimerCallback));
     }
 
     function uiTimerCallback() {
-        var time = System.getClockTime();
-        if (time.sec % Constants.TIME_STEP_SEC == 0) {
-            reloadCurrentOtp();
-        }
         Ui.requestUpdate();
     }
 
+    function otpTimerCallback() {
+        var time = System.getClockTime();
+        if (time.sec % (Constants.TIME_STEP_SEC) == 0) {
+            reloadCurrentOtp();
+        }
+    }
+
     function reloadCurrentOtp() {
+        Sys.println("started new otp calculation at " + AppTimers.currentTime());
         currentOtp = dataProvider.getCurrentOtp();
+        Sys.println("finised new otp calculation at " + AppTimers.currentTime());
     }
 
     // Update the view
@@ -68,6 +74,7 @@ class OtpWidgetView extends Ui.View {
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() {
+        AppTimers.stopOtpTimer();
         AppTimers.stopUiTimer();
     }
 
