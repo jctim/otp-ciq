@@ -38,4 +38,15 @@
     <property id="Account9Secret" type="string"/>
     <property id="Account10Secret" type="string"/>
 
+    <property id="Account1OTPDigits" type="number">6</property>
+    <property id="Account2OTPDigits" type="number">6</property>
+    <property id="Account3OTPDigits" type="number">6</property>
+    <property id="Account4OTPDigits" type="number">6</property>
+    <property id="Account5OTPDigits" type="number">6</property>
+    <property id="Account6OTPDigits" type="number">6</property>
+    <property id="Account7OTPDigits" type="number">6</property>
+    <property id="Account8OTPDigits" type="number">6</property>
+    <property id="Account9OTPDigits" type="number">6</property>
+    <property id="Account10OTPDigits" type="number">6</property>
+
 </properties>

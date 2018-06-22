@@ -6,15 +6,17 @@ class Account {
     var enabled;
     var name;
     var secret;
+    var digits;
 
-    function initialize(enabled, name, secret) {
+    function initialize(enabled, name, secret, digits) {
         self.enabled = enabled;
         self.name = name;
         self.secret = secret;
+        self.digits = digits;
     }
 
     function toString() {
-        return "account[n=" + name + ":e=" + enabled + "]";
+        return "account[n=" + name + ":e=" + enabled + ":d=" + digits + "]";
     }
 }
 
@@ -59,7 +61,7 @@ class OtpDataProvider {
         for (var i = 0; i < Constants.MAX_ACCOUNTS; i++) {
             var acc = accountsFromProperties[i];
             if (acc.enabled) {
-                enabledAccounts.add(new Account(true, acc.name, accountsSecretsFromStorgate[i]));
+                enabledAccounts.add(new Account(true, acc.name, accountsSecretsFromStorgate[i], acc.digits));
             }
         }
 
@@ -86,15 +88,12 @@ class OtpDataProvider {
     hidden function readAccountsFromProperties() {
         var accounts = [];
         for (var accIdx = 1; accIdx <= Constants.MAX_ACCOUNTS; accIdx++) {
-            var accEnabledProp = "Account" + accIdx + "Enabled";
-            var accNameProp    = "Account" + accIdx + "Name";
-            var accSecretProp  = "Account" + accIdx + "Secret";
+            var accEnabled = AppData.readProperty("Account" + accIdx + "Enabled");
+            var accName    = AppData.readProperty("Account" + accIdx + "Name");
+            var accSecret  = AppData.readProperty("Account" + accIdx + "Secret");
+            var accDigits  = AppData.readProperty("Account" + accIdx + "OTPDigits");
 
-            var accEnabled = AppData.readProperty(accEnabledProp);
-            var accName    = AppData.readProperty(accNameProp);
-            var accSecret  = AppData.readProperty(accSecretProp);
-
-            accounts.add(new Account(accEnabled, accName, accSecret));
+            accounts.add(new Account(accEnabled, accName, accSecret, accDigits));
         }
         Sys.println("accounts from properties: " + accounts);
         return accounts;
@@ -166,13 +165,24 @@ class OtpDataProvider {
 
     }
 
+    function formatToken(token) {
+        var formattedToken = "";
+        switch(token.length()) {
+            case 6: formattedToken = token.substring(0, 3) + " " + token.substring(3, 7); break;
+            case 7: formattedToken = token.substring(0, 2) + " " + token.substring(2, 5) + " " + token.substring(5, 8); break;
+            case 8: formattedToken = token.substring(0, 3) + " " + token.substring(3, 5) + " " + token.substring(5, 9); break;
+        }
+        return formattedToken;
+    }
+
     function getCurrentOtp() {
         if (currentAccountIdx < 0 || enabledAccounts.size() == 0) {
             return null;
         }
 
         var acc = enabledAccounts[currentAccountIdx];
-        return new AccountToken(acc.name, Otp.generateTotpSha1(acc.secret));
+        var otpToken = Otp.generateTotpSha1(acc.secret, acc.digits);
+        return new AccountToken(acc.name, formatToken(otpToken));
     }
 
     function getEnabledAccounts() {

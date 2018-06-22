@@ -27,5 +27,10 @@
     
     <string id="AccountName">Account Name</string>
     <string id="AccountSecret">Account Secret Key</string>
+    <string id="AccountOTPDigits">OTP Digits</string>
+
+    <string id="Digits6">6</string>
+    <string id="Digits7">7</string>
+    <string id="Digits8">8</string>
 
 </strings>

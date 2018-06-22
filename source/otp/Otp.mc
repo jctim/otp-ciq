@@ -19,11 +19,12 @@ module Otp {
 
     //! Generate TOTP code, with help of HMAC_SHA1
     //! @param [Toybox::Lang::String] key The HEX String of secret key
+    //! @param [Toybox::Lang::String] how many digits to generate in OTP (no more then 8)
     //! @return [Toybox::Lang::String] generated TOTP code
-    function generateTotpSha1(base32EncodedKey) {
+    function generateTotpSha1(base32EncodedKey, returnDigits) {
         var keyHex = Convert.base32decode2HexString(base32EncodedKey);
         var message = Time.now().value() / Constants.TIME_STEP_SEC;
-        return generateHotpSha1(keyHex, message, 6);
+        return generateHotpSha1(keyHex, message, returnDigits);
     }
 
     //! Generate HOTP code, where H (has function) is HMAC_SHA1
