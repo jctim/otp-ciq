@@ -29,7 +29,7 @@
     </setting>
 
     <!-- Account 1 -->
-    <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1Enabled">
+    <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
@@ -47,7 +47,7 @@
     </setting>
 
     <!-- Account 2 -->
-    <setting propertyKey="@Properties.Account2Enabled" title="@Strings.Account2Enabled">
+    <setting propertyKey="@Properties.Account2Enabled" title="@Strings.Account2">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
@@ -65,7 +65,7 @@
     </setting>
 
     <!-- Account 3 -->
-    <setting propertyKey="@Properties.Account3Enabled" title="@Strings.Account3Enabled">
+    <setting propertyKey="@Properties.Account3Enabled" title="@Strings.Account3">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
@@ -83,7 +83,7 @@
     </setting>
 
     <!-- Account 4 -->
-    <setting propertyKey="@Properties.Account4Enabled" title="@Strings.Account4Enabled">
+    <setting propertyKey="@Properties.Account4Enabled" title="@Strings.Account4">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
@@ -101,7 +101,7 @@
     </setting>
 
     <!-- Account 5 -->
-    <setting propertyKey="@Properties.Account5Enabled" title="@Strings.Account5Enabled">
+    <setting propertyKey="@Properties.Account5Enabled" title="@Strings.Account5">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
@@ -119,7 +119,7 @@
     </setting>
 
     <!-- Account 6 -->
-    <setting propertyKey="@Properties.Account6Enabled" title="@Strings.Account6Enabled">
+    <setting propertyKey="@Properties.Account6Enabled" title="@Strings.Account6">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
@@ -137,7 +137,7 @@
     </setting>
 
     <!-- Account 7 -->
-    <setting propertyKey="@Properties.Account7Enabled" title="@Strings.Account7Enabled">
+    <setting propertyKey="@Properties.Account7Enabled" title="@Strings.Account7">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
@@ -155,7 +155,7 @@
     </setting>
 
     <!-- Account 8 -->
-    <setting propertyKey="@Properties.Account8Enabled" title="@Strings.Account8Enabled">
+    <setting propertyKey="@Properties.Account8Enabled" title="@Strings.Account8">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
@@ -173,7 +173,7 @@
     </setting>
 
     <!-- Account 9 -->
-    <setting propertyKey="@Properties.Account9Enabled" title="@Strings.Account9Enabled">
+    <setting propertyKey="@Properties.Account9Enabled" title="@Strings.Account9">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
@@ -191,7 +191,7 @@
     </setting>
 
     <!-- Account 10 -->
-    <setting propertyKey="@Properties.Account10Enabled" title="@Strings.Account10Enabled">
+    <setting propertyKey="@Properties.Account10Enabled" title="@Strings.Account10">
         <settingConfig type="boolean" />
     </setting>
     <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
@@ -201,6 +201,186 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account10OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 11 -->
+    <setting propertyKey="@Properties.Account11Enabled" title="@Strings.Account11">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account11Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account11Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account11OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 12 -->
+    <setting propertyKey="@Properties.Account12Enabled" title="@Strings.Account12">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account12Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account12Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account12OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 13 -->
+    <setting propertyKey="@Properties.Account13Enabled" title="@Strings.Account13">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account13Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account13Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account13OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 14 -->
+    <setting propertyKey="@Properties.Account14Enabled" title="@Strings.Account14">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account14Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account14Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account14OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 15 -->
+    <setting propertyKey="@Properties.Account15Enabled" title="@Strings.Account15">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account15Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account15Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account15OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 16 -->
+    <setting propertyKey="@Properties.Account16Enabled" title="@Strings.Account16">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account16Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account16Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account16OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 17 -->
+    <setting propertyKey="@Properties.Account17Enabled" title="@Strings.Account17">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account17Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account17Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account17OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 18 -->
+    <setting propertyKey="@Properties.Account18Enabled" title="@Strings.Account18">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account18Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account18Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account18OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 19 -->
+    <setting propertyKey="@Properties.Account19Enabled" title="@Strings.Account19">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account19Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account19Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account19OTPDigits" title="@Strings.AccountOTPDigits">
+        <settingConfig type="list">
+            <listEntry value="6">@Strings.Digits6</listEntry>
+            <listEntry value="7">@Strings.Digits7</listEntry>
+            <listEntry value="8">@Strings.Digits8</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Account 20 -->
+    <setting propertyKey="@Properties.Account20Enabled" title="@Strings.Account20">
+        <settingConfig type="boolean" />
+    </setting>
+    <setting propertyKey="@Properties.Account20Name" title="@Strings.AccountName">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account20Secret" title="@Strings.AccountSecret">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+    <setting propertyKey="@Properties.Account20OTPDigits" title="@Strings.AccountOTPDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>

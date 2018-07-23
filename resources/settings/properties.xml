@@ -15,6 +15,16 @@
     <property id="Account8Enabled" type="boolean">false</property>
     <property id="Account9Enabled" type="boolean">false</property>
     <property id="Account10Enabled" type="boolean">false</property>
+    <property id="Account11Enabled" type="boolean">false</property>
+    <property id="Account12Enabled" type="boolean">false</property>
+    <property id="Account13Enabled" type="boolean">false</property>
+    <property id="Account14Enabled" type="boolean">false</property>
+    <property id="Account15Enabled" type="boolean">false</property>
+    <property id="Account16Enabled" type="boolean">false</property>
+    <property id="Account17Enabled" type="boolean">false</property>
+    <property id="Account18Enabled" type="boolean">false</property>
+    <property id="Account19Enabled" type="boolean">false</property>
+    <property id="Account20Enabled" type="boolean">false</property>
 
     <property id="Account1Name" type="string"/>
     <property id="Account2Name" type="string"/>
@@ -26,6 +36,16 @@
     <property id="Account8Name" type="string"/>
     <property id="Account9Name" type="string"/>
     <property id="Account10Name" type="string"/>
+    <property id="Account11Name" type="string"/>
+    <property id="Account12Name" type="string"/>
+    <property id="Account13Name" type="string"/>
+    <property id="Account14Name" type="string"/>
+    <property id="Account15Name" type="string"/>
+    <property id="Account16Name" type="string"/>
+    <property id="Account17Name" type="string"/>
+    <property id="Account18Name" type="string"/>
+    <property id="Account19Name" type="string"/>
+    <property id="Account20Name" type="string"/>
 
     <property id="Account1Secret" type="string"/>
     <property id="Account2Secret" type="string"/>
@@ -37,6 +57,16 @@
     <property id="Account8Secret" type="string"/>
     <property id="Account9Secret" type="string"/>
     <property id="Account10Secret" type="string"/>
+    <property id="Account11Secret" type="string"/>
+    <property id="Account12Secret" type="string"/>
+    <property id="Account13Secret" type="string"/>
+    <property id="Account14Secret" type="string"/>
+    <property id="Account15Secret" type="string"/>
+    <property id="Account16Secret" type="string"/>
+    <property id="Account17Secret" type="string"/>
+    <property id="Account18Secret" type="string"/>
+    <property id="Account19Secret" type="string"/>
+    <property id="Account20Secret" type="string"/>
 
     <property id="Account1OTPDigits" type="number">6</property>
     <property id="Account2OTPDigits" type="number">6</property>
@@ -48,5 +78,15 @@
     <property id="Account8OTPDigits" type="number">6</property>
     <property id="Account9OTPDigits" type="number">6</property>
     <property id="Account10OTPDigits" type="number">6</property>
+    <property id="Account11OTPDigits" type="number">6</property>
+    <property id="Account12OTPDigits" type="number">6</property>
+    <property id="Account13OTPDigits" type="number">6</property>
+    <property id="Account14OTPDigits" type="number">6</property>
+    <property id="Account15OTPDigits" type="number">6</property>
+    <property id="Account16OTPDigits" type="number">6</property>
+    <property id="Account17OTPDigits" type="number">6</property>
+    <property id="Account18OTPDigits" type="number">6</property>
+    <property id="Account19OTPDigits" type="number">6</property>
+    <property id="Account20OTPDigits" type="number">6</property>
 
 </properties>
