@@ -4,13 +4,13 @@
 
 It actually consists of two parts:
 
-- the 'settings' part aimed to enter secret keys for several accounts (limited by 10), it runs on a smartphone (Garmin Connect&trade; mobile app)
+- the 'settings' part aimed to enter secret keys for several accounts (limited by 10 in initial version and by 20 in version 2.0), it runs on a smartphone (Garmin Connect&trade; mobile app)
 - the generator and viewer of one-time passwords on a Garmin wearable device
 
 ### Existing Features
 
 - Supported all existing round Garmin watches
-- One-time passwords are 6-digit codes
+- One-time passwords are 6-digit codes (or 7- and 8-digit codes in version 2.0)
 - Secret keys are transferred from Garmin Connect&trade; to a wearable device and stay there in [Application Storage](https://developer.garmin.com/downloads/connect-iq/monkey-c/doc/Toybox/Application/Storage.html) (for Connect IQ 2.4 and higher) or in [App Properties](https://developer.garmin.com/downloads/connect-iq/monkey-c/doc/Toybox/Application/AppBase.html#getProperty-instance_method) for older devices (e.g. Fenix3)
 - Secret codes can be entered and copied directly to corresponding text inputs (including spaces between groups)
 
