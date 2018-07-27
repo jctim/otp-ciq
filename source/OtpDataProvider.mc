@@ -166,13 +166,12 @@ class OtpDataProvider {
     }
 
     function formatToken(token) {
-        var formattedToken = "";
-        switch(token.length()) {
-            case 6: formattedToken = token.substring(0, 3) + " " + token.substring(3, 7); break;
-            case 7: formattedToken = token.substring(0, 2) + " " + token.substring(2, 5) + " " + token.substring(5, 8); break;
-            case 8: formattedToken = token.substring(0, 3) + " " + token.substring(3, 5) + " " + token.substring(5, 9); break;
-        }
-        return formattedToken;
+        var tokenLength = token.length();
+        var formatIndex = AppData.readProperty("OTPFormatFor" + tokenLength);
+        var formatPattern = Constants.OTP_FORMAT.get(tokenLength).get(formatIndex);
+        
+        Sys.println("Formatting token " + token + " with pattern " + formatPattern);
+        return Lang.format(formatPattern, token.toCharArray());
     }
 
     function getCurrentOtp() {

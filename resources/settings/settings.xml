@@ -28,6 +28,35 @@
         <settingConfig type="boolean" />
     </setting>
 
+    <setting propertyKey="@Properties.OTPFormatFor6" title="@Strings.OTPFormatFor6">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.OTPFormatFor6_xxxxxx</listEntry>
+            <listEntry value="1">@Strings.OTPFormatFor6_xxx_xxx</listEntry>
+            <listEntry value="2">@Strings.OTPFormatFor6_xx_xx_xx</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.OTPFormatFor7" title="@Strings.OTPFormatFor7">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.OTPFormatFor7_yyyyyyy</listEntry>
+            <listEntry value="1">@Strings.OTPFormatFor7_yyy_yyyy</listEntry>
+            <listEntry value="2">@Strings.OTPFormatFor7_yyyy_yyy</listEntry>
+            <listEntry value="3">@Strings.OTPFormatFor7_yyy_y_yyy</listEntry>
+            <listEntry value="4">@Strings.OTPFormatFor7_yy_yyy_yy</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.OTPFormatFor8" title="@Strings.OTPFormatFor8">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.OTPFormatFor8_zzzzzzzz</listEntry>
+            <listEntry value="1">@Strings.OTPFormatFor8_zzzz_zzzz</listEntry>
+            <listEntry value="2">@Strings.OTPFormatFor8_zzz_zz_zzz</listEntry>
+            <listEntry value="3">@Strings.OTPFormatFor8_zz_zzzz_zz</listEntry>
+            <listEntry value="4">@Strings.OTPFormatFor8_zz_zz_zz_zz</listEntry>
+        </settingConfig>
+    </setting>
+
+
     <!-- Account 1 -->
     <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1">
         <settingConfig type="boolean" />

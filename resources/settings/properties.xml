@@ -4,6 +4,9 @@
     <property id="ForegroundColor" type="number">0xFFFFFF</property>
     <property id="CircleTimerColor" type="number">0x109AD7</property>
     <property id="CircleTimerArrows" type="boolean">false</property>
+    <property id="OTPFormatFor6" type="number">0</property>
+    <property id="OTPFormatFor7" type="number">0</property>
+    <property id="OTPFormatFor8" type="number">0</property>
 
     <property id="Account1Enabled" type="boolean">false</property>
     <property id="Account2Enabled" type="boolean">false</property>

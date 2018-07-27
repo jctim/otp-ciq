@@ -7,6 +7,26 @@
     <string id="CircleTimerColorTitle">Time Circle Color</string>
     <string id="CircleTimerArrowsTitle">Use Arrows in Circle Timer</string>
 
+    <string id="OTPFormatFor6">The format for 6-numeric OTP</string>
+    <string id="OTPFormatFor7">The format for 7-numeric OTP</string>
+    <string id="OTPFormatFor8">The format for 8-numeric OTP</string>
+
+    <string id="OTPFormatFor6_xxxxxx">123456</string>
+    <string id="OTPFormatFor6_xxx_xxx">123 456</string>
+    <string id="OTPFormatFor6_xx_xx_xx">12 34 56</string>
+
+    <string id="OTPFormatFor7_yyyyyyy">1234567</string>
+    <string id="OTPFormatFor7_yyy_yyyy">123 4567</string>
+    <string id="OTPFormatFor7_yyyy_yyy">1234 567</string>
+    <string id="OTPFormatFor7_yyy_y_yyy">123 4 567</string>
+    <string id="OTPFormatFor7_yy_yyy_yy">12 345 67</string>
+
+    <string id="OTPFormatFor8_zzzzzzzz">12345678</string>
+    <string id="OTPFormatFor8_zzzz_zzzz">1234 5678</string>
+    <string id="OTPFormatFor8_zzz_zz_zzz">123 45 678</string>
+    <string id="OTPFormatFor8_zz_zzzz_zz">12 3456 78</string>
+    <string id="OTPFormatFor8_zz_zz_zz_zz">12 34 56 78</string>
+
     <string id="ColorBlack">Black</string>
     <string id="ColorDarkGray">Dark Gray</string>
     <string id="ColorLightGray">Light Gray</string>
