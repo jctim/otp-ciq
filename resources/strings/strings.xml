@@ -59,6 +59,7 @@
     <string id="AccountSecret">Account Secret Key</string>
     <string id="AccountTokenDigits">Token Digits</string>
     <string id="AccountTokenLifetime">Token Lifetime (in seconds)</string>
+    <string id="AccountTokenLifetimeError">Must be a numeric value between 10-60 seconds</string>
 
     <string id="Digits6">6</string>
     <string id="Digits7">7</string>
