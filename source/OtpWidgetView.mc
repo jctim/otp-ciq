@@ -33,7 +33,8 @@ class OtpWidgetView extends Ui.View {
 
     function otpTimerCallback() {
         var time = System.getClockTime();
-        if (time.sec % (Constants.TIME_STEP_SEC) == 0) {
+        var currentTokenLifetime = App.getApp().getCurrentTokenLifetime();
+        if (time.sec % (currentTokenLifetime) == 0) {
             reloadCurrentOtp();
         }
     }
@@ -41,6 +42,11 @@ class OtpWidgetView extends Ui.View {
     function reloadCurrentOtp() {
         Sys.println("started new otp calculation at " + AppTimers.currentTime());
         currentOtp = dataProvider.getCurrentOtp();
+        if (currentOtp != null) {
+            App.getApp().setCurrentTokenLifetime(currentOtp.lifetime);
+        } else {
+            App.getApp().setCurrentTokenLifetime(Constants.DEFAULT_TOKEN_LIFETIME);
+        }
         Sys.println("finised new otp calculation at " + AppTimers.currentTime());
     }
 

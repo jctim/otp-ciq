@@ -8,6 +8,16 @@ class OtpApp extends App.AppBase {
     var view;
     var delegate;
 
+    hidden var currentTokenLifetime = Constants.DEFAULT_TOKEN_LIFETIME;
+
+    function setCurrentTokenLifetime(currentTokenLifetime) {
+        self.currentTokenLifetime = currentTokenLifetime;
+    }
+
+    function getCurrentTokenLifetime() {
+        return currentTokenLifetime;
+    }
+
     function initialize() {
         AppBase.initialize();
         self.dataProvider = new OtpDataProvider();

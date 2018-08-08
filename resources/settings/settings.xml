@@ -28,31 +28,31 @@
         <settingConfig type="boolean" />
     </setting>
 
-    <setting propertyKey="@Properties.OTPFormatFor6" title="@Strings.OTPFormatFor6">
+    <setting propertyKey="@Properties.TokenFormatFor6" title="@Strings.TokenFormatFor6">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.OTPFormatFor6_xxxxxx</listEntry>
-            <listEntry value="1">@Strings.OTPFormatFor6_xxx_xxx</listEntry>
-            <listEntry value="2">@Strings.OTPFormatFor6_xx_xx_xx</listEntry>
+            <listEntry value="0">@Strings.TokenFormatFor6_xxxxxx</listEntry>
+            <listEntry value="1">@Strings.TokenFormatFor6_xxx_xxx</listEntry>
+            <listEntry value="2">@Strings.TokenFormatFor6_xx_xx_xx</listEntry>
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.OTPFormatFor7" title="@Strings.OTPFormatFor7">
+    <setting propertyKey="@Properties.TokenFormatFor7" title="@Strings.TokenFormatFor7">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.OTPFormatFor7_yyyyyyy</listEntry>
-            <listEntry value="1">@Strings.OTPFormatFor7_yyy_yyyy</listEntry>
-            <listEntry value="2">@Strings.OTPFormatFor7_yyyy_yyy</listEntry>
-            <listEntry value="3">@Strings.OTPFormatFor7_yyy_y_yyy</listEntry>
-            <listEntry value="4">@Strings.OTPFormatFor7_yy_yyy_yy</listEntry>
+            <listEntry value="0">@Strings.TokenFormatFor7_yyyyyyy</listEntry>
+            <listEntry value="1">@Strings.TokenFormatFor7_yyy_yyyy</listEntry>
+            <listEntry value="2">@Strings.TokenFormatFor7_yyyy_yyy</listEntry>
+            <listEntry value="3">@Strings.TokenFormatFor7_yyy_y_yyy</listEntry>
+            <listEntry value="4">@Strings.TokenFormatFor7_yy_yyy_yy</listEntry>
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.OTPFormatFor8" title="@Strings.OTPFormatFor8">
+    <setting propertyKey="@Properties.TokenFormatFor8" title="@Strings.TokenFormatFor8">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.OTPFormatFor8_zzzzzzzz</listEntry>
-            <listEntry value="1">@Strings.OTPFormatFor8_zzzz_zzzz</listEntry>
-            <listEntry value="2">@Strings.OTPFormatFor8_zzz_zz_zzz</listEntry>
-            <listEntry value="3">@Strings.OTPFormatFor8_zz_zzzz_zz</listEntry>
-            <listEntry value="4">@Strings.OTPFormatFor8_zz_zz_zz_zz</listEntry>
+            <listEntry value="0">@Strings.TokenFormatFor8_zzzzzzzz</listEntry>
+            <listEntry value="1">@Strings.TokenFormatFor8_zzzz_zzzz</listEntry>
+            <listEntry value="2">@Strings.TokenFormatFor8_zzz_zz_zzz</listEntry>
+            <listEntry value="3">@Strings.TokenFormatFor8_zz_zzzz_zz</listEntry>
+            <listEntry value="4">@Strings.TokenFormatFor8_zz_zz_zz_zz</listEntry>
         </settingConfig>
     </setting>
 
@@ -67,12 +67,15 @@
     <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account1OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account1TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account1TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 2 -->
@@ -85,12 +88,15 @@
     <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account2OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account2TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account2TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 3 -->
@@ -103,12 +109,15 @@
     <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account3OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account3TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account3TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 4 -->
@@ -121,12 +130,15 @@
     <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account4OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account4TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account4TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 5 -->
@@ -139,12 +151,15 @@
     <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account5OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account5TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account5TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 6 -->
@@ -157,12 +172,15 @@
     <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account6OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account6TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account6TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 7 -->
@@ -175,12 +193,15 @@
     <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account7OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account7TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account7TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 8 -->
@@ -193,12 +214,15 @@
     <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account8OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account8TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account8TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 9 -->
@@ -211,12 +235,15 @@
     <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account9OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account9TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account9TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 10 -->
@@ -229,12 +256,15 @@
     <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account10OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account10TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account10TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 11 -->
@@ -247,12 +277,15 @@
     <setting propertyKey="@Properties.Account11Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account11OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account11TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account11TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 12 -->
@@ -265,12 +298,15 @@
     <setting propertyKey="@Properties.Account12Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account12OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account12TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account12TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 13 -->
@@ -283,12 +319,15 @@
     <setting propertyKey="@Properties.Account13Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account13OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account13TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account13TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 14 -->
@@ -301,12 +340,15 @@
     <setting propertyKey="@Properties.Account14Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account14OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account14TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account14TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 15 -->
@@ -319,12 +361,15 @@
     <setting propertyKey="@Properties.Account15Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account15OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account15TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account15TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 16 -->
@@ -337,12 +382,15 @@
     <setting propertyKey="@Properties.Account16Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account16OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account16TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account16TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 17 -->
@@ -355,12 +403,15 @@
     <setting propertyKey="@Properties.Account17Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account17OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account17TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account17TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 18 -->
@@ -373,12 +424,15 @@
     <setting propertyKey="@Properties.Account18Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account18OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account18TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account18TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 19 -->
@@ -391,12 +445,15 @@
     <setting propertyKey="@Properties.Account19Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account19OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account19TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account19TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
     <!-- Account 20 -->
@@ -409,12 +466,15 @@
     <setting propertyKey="@Properties.Account20Secret" title="@Strings.AccountSecret">
         <settingConfig type="alphaNumeric" />
     </setting>
-    <setting propertyKey="@Properties.Account20OTPDigits" title="@Strings.AccountOTPDigits">
+    <setting propertyKey="@Properties.Account20TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
             <listEntry value="6">@Strings.Digits6</listEntry>
             <listEntry value="7">@Strings.Digits7</listEntry>
             <listEntry value="8">@Strings.Digits8</listEntry>
         </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Account20TokenLifetime" title="@Strings.AccountTokenLifetime">
+        <settingConfig type="numeric" min="10" max="60" />
     </setting>
 
 </settings>

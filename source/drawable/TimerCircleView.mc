@@ -5,6 +5,10 @@ using Toybox.System as Sys;
 
 class TimerCircleView extends Ui.Drawable {
 
+    // ui consts
+    const START_ANGEL = 270;
+    const ROUND_WIDTH = 12;
+
     function initialize(params) {
         Drawable.initialize(params);
     }
@@ -17,37 +21,38 @@ class TimerCircleView extends Ui.Drawable {
         var timeColor = AppData.readProperty(Constants.CIRCLE_TIMER_COLOR_PROP);
         var bgColor = AppData.readProperty(Constants.BG_COLOR_PROP);
         var useArrows = AppData.readProperty(Constants.CIRCLE_TIMER_ARROWS_PROP);
+        var currentTokenLifetime = App.getApp().getCurrentTokenLifetime();
 
         var time   = System.getClockTime();
 
-        if (time.sec % Constants.TIME_STEP_SEC > Constants.RED_ZONE_SEC || time.sec % Constants.TIME_STEP_SEC == 0) {
+        if (time.sec % currentTokenLifetime > currentTokenLifetime - 5 || time.sec % currentTokenLifetime == 0) {
             timeColor = Gfx.COLOR_RED;
         }
 
-        var angel = time.sec * Constants.ANGEL_MULTIPLIER;
-        var r     = maxR - (Constants.ROUND_WIDTH / 2);
+        var angel = time.sec * 360 / currentTokenLifetime;
+        var r     = maxR - (ROUND_WIDTH / 2);
 
         // draw main time filler
-        dc.setPenWidth(Constants.ROUND_WIDTH);
+        dc.setPenWidth(ROUND_WIDTH);
         dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
         dc.drawArc(x, y, r, Gfx.ARC_CLOCKWISE,
-                   Constants.START_ANGEL, Constants.START_ANGEL - angel);
+                   START_ANGEL, START_ANGEL - angel);
 
         if (useArrows) {
             // draw arrows of time filler
             dc.setPenWidth(1);
-            for (var i = 0; i < Constants.ROUND_WIDTH; i++) {
-                var shift = i < Constants.ROUND_WIDTH / 2 ? i : Constants.ROUND_WIDTH - i;
+            for (var i = 0; i < ROUND_WIDTH; i++) {
+                var shift = i < ROUND_WIDTH / 2 ? i : ROUND_WIDTH - i;
 
                 dc.setColor(bgColor, Gfx.COLOR_TRANSPARENT);
                 dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE,
-                           Constants.START_ANGEL,
-                           Constants.START_ANGEL - shift);
+                           START_ANGEL,
+                           START_ANGEL - shift);
 
                 dc.setColor(timeColor, Gfx.COLOR_TRANSPARENT);
                 dc.drawArc(x, y, maxR - i, Gfx.ARC_CLOCKWISE,
-                           Constants.START_ANGEL - angel + 1,
-                           Constants.START_ANGEL - angel - shift - 1);
+                           START_ANGEL - angel + 1,
+                           START_ANGEL - angel - shift - 1);
 
             }
         }

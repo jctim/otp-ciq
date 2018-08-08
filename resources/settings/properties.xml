@@ -4,9 +4,9 @@
     <property id="ForegroundColor" type="number">0xFFFFFF</property>
     <property id="CircleTimerColor" type="number">0x109AD7</property>
     <property id="CircleTimerArrows" type="boolean">false</property>
-    <property id="OTPFormatFor6" type="number">0</property>
-    <property id="OTPFormatFor7" type="number">0</property>
-    <property id="OTPFormatFor8" type="number">0</property>
+    <property id="TokenFormatFor6" type="number">0</property>
+    <property id="TokenFormatFor7" type="number">0</property>
+    <property id="TokenFormatFor8" type="number">0</property>
 
     <property id="Account1Enabled" type="boolean">false</property>
     <property id="Account2Enabled" type="boolean">false</property>
@@ -71,25 +71,46 @@
     <property id="Account19Secret" type="string"/>
     <property id="Account20Secret" type="string"/>
 
-    <property id="Account1OTPDigits" type="number">6</property>
-    <property id="Account2OTPDigits" type="number">6</property>
-    <property id="Account3OTPDigits" type="number">6</property>
-    <property id="Account4OTPDigits" type="number">6</property>
-    <property id="Account5OTPDigits" type="number">6</property>
-    <property id="Account6OTPDigits" type="number">6</property>
-    <property id="Account7OTPDigits" type="number">6</property>
-    <property id="Account8OTPDigits" type="number">6</property>
-    <property id="Account9OTPDigits" type="number">6</property>
-    <property id="Account10OTPDigits" type="number">6</property>
-    <property id="Account11OTPDigits" type="number">6</property>
-    <property id="Account12OTPDigits" type="number">6</property>
-    <property id="Account13OTPDigits" type="number">6</property>
-    <property id="Account14OTPDigits" type="number">6</property>
-    <property id="Account15OTPDigits" type="number">6</property>
-    <property id="Account16OTPDigits" type="number">6</property>
-    <property id="Account17OTPDigits" type="number">6</property>
-    <property id="Account18OTPDigits" type="number">6</property>
-    <property id="Account19OTPDigits" type="number">6</property>
-    <property id="Account20OTPDigits" type="number">6</property>
+    <property id="Account1TokenDigits" type="number">6</property>
+    <property id="Account2TokenDigits" type="number">6</property>
+    <property id="Account3TokenDigits" type="number">6</property>
+    <property id="Account4TokenDigits" type="number">6</property>
+    <property id="Account5TokenDigits" type="number">6</property>
+    <property id="Account6TokenDigits" type="number">6</property>
+    <property id="Account7TokenDigits" type="number">6</property>
+    <property id="Account8TokenDigits" type="number">6</property>
+    <property id="Account9TokenDigits" type="number">6</property>
+    <property id="Account10TokenDigits" type="number">6</property>
+    <property id="Account11TokenDigits" type="number">6</property>
+    <property id="Account12TokenDigits" type="number">6</property>
+    <property id="Account13TokenDigits" type="number">6</property>
+    <property id="Account14TokenDigits" type="number">6</property>
+    <property id="Account15TokenDigits" type="number">6</property>
+    <property id="Account16TokenDigits" type="number">6</property>
+    <property id="Account17TokenDigits" type="number">6</property>
+    <property id="Account18TokenDigits" type="number">6</property>
+    <property id="Account19TokenDigits" type="number">6</property>
+    <property id="Account20TokenDigits" type="number">6</property>
+
+    <property id="Account1TokenLifetime" type="number">30</property>
+    <property id="Account2TokenLifetime" type="number">30</property>
+    <property id="Account3TokenLifetime" type="number">30</property>
+    <property id="Account4TokenLifetime" type="number">30</property>
+    <property id="Account5TokenLifetime" type="number">30</property>
+    <property id="Account6TokenLifetime" type="number">30</property>
+    <property id="Account7TokenLifetime" type="number">30</property>
+    <property id="Account8TokenLifetime" type="number">30</property>
+    <property id="Account9TokenLifetime" type="number">30</property>
+    <property id="Account10TokenLifetime" type="number">30</property>
+    <property id="Account11TokenLifetime" type="number">30</property>
+    <property id="Account12TokenLifetime" type="number">30</property>
+    <property id="Account13TokenLifetime" type="number">30</property>
+    <property id="Account14TokenLifetime" type="number">30</property>
+    <property id="Account15TokenLifetime" type="number">30</property>
+    <property id="Account16TokenLifetime" type="number">30</property>
+    <property id="Account17TokenLifetime" type="number">30</property>
+    <property id="Account18TokenLifetime" type="number">30</property>
+    <property id="Account19TokenLifetime" type="number">30</property>
+    <property id="Account20TokenLifetime" type="number">30</property>
 
 </properties>
