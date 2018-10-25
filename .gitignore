@@ -1,5 +1,6 @@
 .idea/
 *.iml
+.vscode/
 
 out/
 bin/
