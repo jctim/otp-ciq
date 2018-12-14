@@ -7,6 +7,10 @@
     <string id="CircleTimerColorTitle">Time Circle Color</string>
     <string id="CircleTimerArrowsTitle">Use Arrows in Circle Timer</string>
 
+    <string id="TokensOrder">The ordering how tokens are displayed in widget's menu</string>
+    <string id="TokensOrderByIndex">By index</string>
+    <string id="TokensOrderByName">By name</string>
+
     <string id="TokenFormatFor6">The format for 6-numeric Tokens</string>
     <string id="TokenFormatFor7">The format for 7-numeric Tokens</string>
     <string id="TokenFormatFor8">The format for 8-numeric Tokens</string>

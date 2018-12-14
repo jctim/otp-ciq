@@ -28,6 +28,14 @@
         <settingConfig type="boolean" />
     </setting>
 
+    <setting propertyKey="@Properties.TokensOrder" title="@Strings.TokensOrder">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.TokensOrderByIndex</listEntry>
+            <listEntry value="1">@Strings.TokensOrderByName</listEntry>
+        </settingConfig>
+    </setting>
+
+
     <setting propertyKey="@Properties.TokenFormatFor6" title="@Strings.TokenFormatFor6">
         <settingConfig type="list">
             <listEntry value="0">@Strings.TokenFormatFor6_xxxxxx</listEntry>

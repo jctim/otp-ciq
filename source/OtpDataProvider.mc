@@ -66,6 +66,7 @@ class OtpDataProvider {
             var acc = accountsFromProperties[i];
             if (acc.enabled) {
                 enabledAccounts.add(new Account(true, acc.name, accountsSecretsFromStorgate[i], acc.digits, acc.lifetime));
+                sortAccounts(enabledAccounts);
             }
         }
 
@@ -125,13 +126,13 @@ class OtpDataProvider {
 
             // User didn't enter secret property in settings and it didn't exists in storage - it was set yet.
             // just don't enable this account at all
-            if (acc.enabled && isEmptyString(acc.secret) && isEmptyString(accSecret) ) {
+            if (acc.enabled && Strings.isEmpty(acc.secret) && Strings.isEmpty(accSecret) ) {
                 acc.enabled = false;
                 AppData.saveProperty("Account" + accIdx + "Enabled", acc.enabled);     // switch off this account
             }
 
             // User updated secret property in settings - copy it to storage and clear in properties
-            if (!isEmptyString(acc.secret)) {
+            if (!Strings.isEmpty(acc.secret)) {
                 Sys.println("secret of acc " + i + " is not empty in properties, will update storage with it and clean the property...");
                 accSecret = normalizeSecret(acc.secret);
                 acc.secret = "";
@@ -147,8 +148,24 @@ class OtpDataProvider {
         return secretsUpdatedByUser;
     }
 
-    hidden function isEmptyString(str) {
-        return str == null || (str instanceof Toybox.Lang.String && str.length() == 0);
+    hidden function sortAccounts(accounts) {
+        var tokensOrder = AppData.readProperty("TokensOrder");
+        switch (tokensOrder) {
+            case 0: // order by index, already sorted
+                break;
+            case 1: // order by name, simple insertion sort for not more then 20 items
+                var temp;
+                for (var i = 1; i < accounts.size(); i++) {
+                    for (var j = i; j > 0; j--) {
+                        if (Strings.compare(accounts[j].name, accounts[j-1].name) < 0) {
+                            temp = accounts[j];
+                            accounts[j] = accounts[j-1];
+                            accounts[j-1] = temp;
+                        }
+                    }
+                }
+                 break;
+        }
     }
 
     //! delete all spaces and upper case all letters

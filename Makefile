@@ -21,10 +21,10 @@ buildall:
 	@for device in $(SUPPORTED_DEVICES_LIST); do \
 		echo "-----"; \
 		echo "Building for" $$device; \
-    $(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$$device.prg \
-    -f ./monkey.jungle \
-    -y $(DEVELOPER_KEY) \
-    -d $$device; \
+	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$$device.prg \
+	-f ./monkey.jungle \
+	-y $(DEVELOPER_KEY) \
+	-d $$device; \
 	done
 
 run: build
@@ -36,13 +36,13 @@ test: build-test
 	$(SDK_HOME)/bin/monkeydo bin/$(appName)-test.prg $(DEVICE) -t
 
 clean:
-	@rm bin/*
+	@rm -rf bin/*
 
 deploy: build
 	@cp bin/$(appName).prg $(DEPLOY)
 
 package:
 	@$(SDK_HOME)/bin/monkeyc --warn -e --output bin/$(appName).iq \
-    -f ./monkey.jungle \
+	-f ./monkey.jungle \
 	-y $(DEVELOPER_KEY) \
 	-r

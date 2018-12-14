@@ -4,6 +4,7 @@
     <property id="ForegroundColor" type="number">0xFFFFFF</property>
     <property id="CircleTimerColor" type="number">0x109AD7</property>
     <property id="CircleTimerArrows" type="boolean">false</property>
+    <property id="TokensOrder" type="number">0</property>
     <property id="TokenFormatFor6" type="number">0</property>
     <property id="TokenFormatFor7" type="number">0</property>
     <property id="TokenFormatFor8" type="number">0</property>
