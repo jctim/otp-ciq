@@ -1,5 +1,4 @@
 language: java
-dist: xenial
 jdk: openjdk8
 before_script:
     - sudo apt-get install -qq dos2unix
