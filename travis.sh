@@ -16,34 +16,9 @@ unzip "${SDK_FILE}" "bin/*" -d "${SDK_DIR}"
 openssl genrsa -out "${PEM_FILE}" 4096
 openssl pkcs8 -topk8 -inform PEM -outform DER -in "${PEM_FILE}" -out "${DER_FILE}" -nocrypt
 
-export SDK_HOME="${SDK_DIR}"
-export DEVELOPER_KEY="${DER_FILE}"
-export DEVICE="vivoactive3"
+export MB_HOME="${SDK_DIR}"
+export MB_PRIVATE_KEY="${DER_FILE}"
 
-appName=`grep entry manifest.xml | sed 's/.*entry="\([^"]*\).*/\1/'`
-
-# make build
-echo "${SDK_HOME}/bin/monkeyc" --warn --output "bin/${appName}.prg" \
-	-f ./monkey.jungle \
-	-y "${DEVELOPER_KEY}" \
-	-d "${DEVICE}"
-
-"${SDK_HOME}/bin/monkeyc" --warn --output "bin/${appName}.prg" \
-	-f ./monkey.jungle \
-	-y "${DEVELOPER_KEY}" \
-	-d "${DEVICE}"
-
-# make test
-"${SDK_HOME}/bin/monkeyc" --warn --output "bin/${appName}-test.prg" \
-	-f ./monkey.jungle \
-	--unit-test \
-	-y "${DEVELOPER_KEY}" \
-	-d "${DEVICE}"
-
-"${SDK_HOME}/bin/connectiq" && "${SDK_HOME}/bin/monkeydo" "bin/${appName}-test.prg" "${DEVICE}" -t
-
-# make package
-"${SDK_HOME}/bin/monkeyc" --warn -e --output "bin/${appName}.iq" \
-    -f ./monkey.jungle \
-	-y "${DEVELOPER_KEY}" \
-	-r
+./mb_runner.sh build
+./mb_runner.sh test
+./mb_runner.sh package
