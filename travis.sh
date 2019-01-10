@@ -19,6 +19,6 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in "${PEM_FILE}" -out "${DER_FILE
 export MB_HOME="${SDK_DIR}"
 export MB_PRIVATE_KEY="${DER_FILE}"
 
-./mb_runner.sh build
-./mb_runner.sh test
-./mb_runner.sh package
+./mb_runner/mb_runner.sh build ..
+./mb_runner/mb_runner.sh test ..
+./mb_runner/mb_runner.sh package ..
