@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jctim/otp-ciq.svg?branch=master)](https://otp-ciq.com/jctim/urzad-visitor) [![Build Status](https://travis-ci.com/jctim/otp-ciq.svg?branch=version-2)](https://otp-ciq.com/jctim/urzad-visitor)
+
 # otp-ciq
 
 **OTP Auth Widget for Garmin Connect IQ** - manager of one-time passwords right on a Garmin wearable device. 
