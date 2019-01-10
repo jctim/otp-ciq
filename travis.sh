@@ -23,6 +23,11 @@ export DEVICE="vivoactive3"
 appName=`grep entry manifest.xml | sed 's/.*entry="\([^"]*\).*/\1/'`
 
 # make build
+echo "${SDK_HOME}/bin/monkeyc" --warn --output "bin/${appName}.prg" \
+	-f ./monkey.jungle \
+	-y "${DEVELOPER_KEY}" \
+	-d "${DEVICE}"
+
 "${SDK_HOME}/bin/monkeyc" --warn --output "bin/${appName}.prg" \
 	-f ./monkey.jungle \
 	-y "${DEVELOPER_KEY}" \
