@@ -1,3 +1,5 @@
+[<img src="http://developer.garmin.com/img/connect-iq/brand/available-badge.svg" alt="version 2" height="88"/>](https://apps.garmin.com/en-US/apps/ee88adca-09ca-41c1-a097-dd0d6346541f)
+
 # otp-ciq
 
 **OTP Auth Widget for Garmin Connect IQ** - manager of one-time passwords right on a Garmin wearable device. 
