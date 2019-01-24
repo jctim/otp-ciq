@@ -136,8 +136,8 @@ DEVICES="${MB_HOME}/bin/devices.xml"
 function params_for_build
 {
     PARAMS+="--device \"${TARGET_DEVICE}\" "
-    PARAMS+="--output \"${APP_NAME}.prg\" "
-    PARAMS+="--sdk-version \"${TARGET_SDK_VERSION}\" "
+    PARAMS+="--output \"bin/${APP_NAME}.prg\" "
+#    PARAMS+="--sdk-version \"${TARGET_SDK_VERSION}\" "
     PARAMS+="--private-key \"${MB_PRIVATE_KEY}\" "
 
     PARAMS+="--apidb \"${API_DB}\" "
@@ -159,7 +159,7 @@ function params_for_build
 
 function params_for_package
 {
-    PARAMS+="--output \"${APP_NAME}.iq\" "
+    PARAMS+="--output \"bin/${APP_NAME}.iq\" "
     PARAMS+="--private-key \"${MB_PRIVATE_KEY}\" "
 
     PARAMS+="--package-app "
