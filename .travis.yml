@@ -1,5 +1,6 @@
 language: java
-jdk: openjdk8
+#jdk: openjdk8
+jdk: oraclejdk8
 before_script:
     - sudo apt-get install -qq dos2unix
 script:
