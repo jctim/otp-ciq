@@ -6,6 +6,7 @@ services:
 before_install:
   - sudo dpkg --add-architecture i386
   - sudo apt-get install libwebkitgtk-1.0
+  - sudo apt-get install libpng12-0
 script:
   - mv monkey.jungle monkey2.jungle # TODO workaround. Use script instead
   - xvfb-run ./travis.sh
