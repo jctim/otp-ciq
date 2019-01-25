@@ -1,8 +1,22 @@
-include properties.mk
+include properties-travis.mk
 
 sources = `find source -name '*.mc'`
 resources = `find resources* -name '*.xml' | tr '\n' ':' | sed 's/.$$//'`
 appName = `grep entry manifest.xml | sed 's/.*entry="\([^"]*\).*/\1/'`
+
+build-test-legacy:
+	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-test-legacy.prg \
+	-m manifest.xml \
+	-z $(resources) \
+	-y $(DEVELOPER_KEY) \
+	-d $(DEVICE) \
+	--unit-test \
+	$(sources)
+
+test-legacy: build-test-legacy
+	@$(SDK_HOME)/bin/connectiq &&\
+	$(SDK_HOME)/bin/monkeydo bin/$(appName)-test-legacy.prg $(DEVICE) -t
+	
 
 build:
 	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName).prg \
