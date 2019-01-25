@@ -23,6 +23,7 @@ cd sdk/bin/
 echo -e '#!/bin/sh\n\nwine $(dirname "$0")/shell.exe "$@"' > shell
 echo -e '#!/bin/sh\n\nwine $(dirname "$0")/simulator.exe "$@"' > simulator
 chmod a+x monkeyc monkeydo monkeygraph connectiq connectiqpkg simulator shell
+dos2unix monkeyc monkeydo monkeygraph connectiq connectiqpkg simulator shell
 sed -i 's/\r//g' monkeygraph
 cd ../../
 
