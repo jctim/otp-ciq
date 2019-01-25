@@ -1,7 +1,7 @@
 #!/bin/bash
 # travis.sh script to
 
-SDK_URL="https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-3.0.7-2018-12-17-efeb3e3.zip"
+SDK_URL="https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-win-3.0.7-2018-12-17-efeb3e3.zip"
 SDK_FILE="sdk.zip"
 SDK_DIR="sdk"
 
@@ -18,6 +18,13 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in "${PEM_FILE}" -out "${DER_FILE
 
 export MB_HOME="${SDK_DIR}"
 export MB_PRIVATE_KEY="${DER_FILE}"
+
+cd sdk/bin/
+echo -e '#!/bin/bash\n\nwine $(dirname "$0")/shell.exe "$@"' > shell
+echo -e '#!/bin/bash\n\nwine $(dirname "$0")/simulator.exe "$@"' > simulator
+chmod a+x monkeyc monkeydo monkeygraph connectiq connectiqpkg simulator shell
+sed -i 's/\r//g' monkeygraph
+cd ../../
 
 ./mb_runner.sh build
 ./mb_runner.sh test

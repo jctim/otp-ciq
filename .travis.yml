@@ -3,7 +3,6 @@ language: java
 jdk: oraclejdk8
 before_install:
   - sudo apt-get install -y wine
-before_script:
-    - sudo apt-get install -qq dos2unix
+  - sudo apt-get install -qq dos2unix
 script:
     - ./travis.sh
