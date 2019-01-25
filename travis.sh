@@ -20,8 +20,8 @@ export MB_HOME="${SDK_DIR}"
 export MB_PRIVATE_KEY="${DER_FILE}"
 
 cd sdk/bin/
-echo -e '#!/bin/bash\n\nwine $(dirname "$0")/shell.exe "$@"' > shell
-echo -e '#!/bin/bash\n\nwine $(dirname "$0")/simulator.exe "$@"' > simulator
+echo -e '#!/bin/sh\n\nwine $(dirname "$0")/shell.exe "$@"' > shell
+echo -e '#!/bin/sh\n\nwine $(dirname "$0")/simulator.exe "$@"' > simulator
 chmod a+x monkeyc monkeydo monkeygraph connectiq connectiqpkg simulator shell
 sed -i 's/\r//g' monkeygraph
 cd ../../
