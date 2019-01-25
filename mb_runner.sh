@@ -136,7 +136,7 @@ DEVICES="${MB_HOME}/bin/devices.xml"
 function params_for_build
 {
     PARAMS+="--device \"${TARGET_DEVICE}\" "
-    PARAMS+="--output \"bin/${APP_NAME}.prg\" "
+    PARAMS+="--output \"${APP_NAME}.prg\" "
 #    PARAMS+="--sdk-version \"${TARGET_SDK_VERSION}\" "
     PARAMS+="--private-key \"${MB_PRIVATE_KEY}\" "
 
@@ -159,7 +159,7 @@ function params_for_build
 
 function params_for_package
 {
-    PARAMS+="--output \"bin/${APP_NAME}.iq\" "
+    PARAMS+="--output \"${APP_NAME}.iq\" "
     PARAMS+="--private-key \"${MB_PRIVATE_KEY}\" "
 
     PARAMS+="--package-app "
@@ -182,7 +182,7 @@ function compile
 
 function tests
 {
-    "${MB_HOME}/bin/monkeydo" "${PROJECT_HOME}/${APP_NAME}.prg" -t
+    "${MB_HOME}/bin/monkeydo" "${PROJECT_HOME}/${APP_NAME}.prg" "${TARGET_DEVICE}" -t
 }
 
 function clean
@@ -218,6 +218,7 @@ case "${1}" in
    test)
         params_for_build
         compile
+        simulator
         tests
         ;;
    package)
