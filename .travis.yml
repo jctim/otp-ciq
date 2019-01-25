@@ -3,6 +3,8 @@ jdk: openjdk8
 #jdk: oraclejdk8
 services:
   - xvfb
+before_install:
+  - apt-get install libwebkitgtk-1.0
 script:
-    - mv monkey.jungle monkey2.jungle
-    - xvfb-run ./travis.sh
+  - mv monkey.jungle monkey2.jungle
+  - xvfb-run ./travis.sh
