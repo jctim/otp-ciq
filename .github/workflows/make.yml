@@ -8,8 +8,8 @@ on:
 
 env:
   CIQ_SDK_DOWNLOAD_URL: https://developer.garmin.com/downloads/connect-iq
-  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
-  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
+  CIQ_SDK_MANAGER_DIR_URL: ${CIQ_SDK_DOWNLOAD_URL}/sdk-manager
+  CIQ_SDK_MANAGER_LIST_URL: $CIQ_SDK_MANAGER_DIR_URL/sdk-manager.json
 
 jobs:
   build:
@@ -28,13 +28,12 @@ jobs:
         run: |
           CIQ_SDK_MANAGER_URL=${CIQ_SDK_MANAGER_DIR_URL}/$(curl -s "${CIQ_SDK_MANAGER_LIST_URL}" | jq -r '.linux')
           echo $CIQ_SDK_MANAGER_URL
-          echo $HOME
           curl -s -L "${CIQ_SDK_MANAGER_URL}" -o $HOME/connectiq-sdk-manager-linux.zip
           mkdir -p /opt/connectiq-sdk-manager-linux
           cd /opt/connectiq-sdk-manager-linux
           unzip -q $HOME/connectiq-sdk-manager-linux.zip
           chmod -R go-w /opt/connectiq-sdk-manager-linux
-
+          ls -la /opt/connectiq-sdk-manager-linux
 
       - name: Create properties.mk
         run: |
