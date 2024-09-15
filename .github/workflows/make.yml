@@ -7,9 +7,8 @@ on:
     branches: [ "version-2", "version2-sdk-upgrade" ]
 
 env:
-  CIQ_SDK_DOWNLOAD_URL: https://developer.garmin.com/downloads/connect-iq
-  CIQ_SDK_MANAGER_DIR_URL: ${{ env.CIQ_SDK_DOWNLOAD_URL }}/sdk-manager
-  CIQ_SDK_MANAGER_LIST_URL: ${{ env.CIQ_SDK_MANAGER_DIR_URL }}/sdk-manager.json
+  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
+  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
 
 jobs:
   build:
