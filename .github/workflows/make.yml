@@ -2,7 +2,7 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "version-2" ]
+    branches: [ "version-2","version-2-sdk-upgrade", "version-2-sdk-upgrade-ci" ]
   pull_request:
     branches: [ "version-2", "version-2-sdk-upgrade" ]
 
