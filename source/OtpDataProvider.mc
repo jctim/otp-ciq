@@ -1,6 +1,7 @@
 using Toybox.Application as App;
 using Toybox.System as Sys;
 using Toybox.StringUtil as StringUtil;
+import Toybox.Lang;
 
 class Account {
     var enabled;
@@ -40,9 +41,9 @@ class AccountToken {
 
 class OtpDataProvider {
 
-    hidden var enabledAccounts = [];
-    hidden var currentAccountIdx = -1;
-    hidden var maxAccountIdx = -1;
+    hidden var enabledAccounts as Array<Account> = [];
+    hidden var currentAccountIdx as Number = -1;
+    hidden var maxAccountIdx as Number = -1;
 
     function initialize() {
         reloadData();
@@ -90,7 +91,7 @@ class OtpDataProvider {
         Sys.println("maxAccountIdx: " + maxAccountIdx);
     }
 
-    hidden function readAccountsFromProperties() {
+    hidden function readAccountsFromProperties() as Array<Account> {
         var accounts = [];
         for (var accIdx = 1; accIdx <= Constants.MAX_ACCOUNTS; accIdx++) {
             var accEnabled  = AppData.readProperty("Account" + accIdx + "Enabled");
@@ -117,7 +118,7 @@ class OtpDataProvider {
         return accountSecrets;
     }
 
-    hidden function mergeAccountsAndSecrets(accountsFromProperties, accountSecretsFromStorgate) {
+    hidden function mergeAccountsAndSecrets(accountsFromProperties as Array<Account>, accountSecretsFromStorgate as String) {
         var secretsUpdatedByUser = false;
         for (var i = 0; i < Constants.MAX_ACCOUNTS; i++) {
             var acc = accountsFromProperties[i];
@@ -149,7 +150,7 @@ class OtpDataProvider {
     }
 
     hidden function sortAccounts(accounts) {
-        var tokensOrder = AppData.readProperty("TokensOrder");
+        var tokensOrder = AppData.readProperty("TokensOrder") as Number;
         switch (tokensOrder) {
             case 0: // order by index, already sorted
                 break;

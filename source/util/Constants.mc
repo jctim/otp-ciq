@@ -1,3 +1,7 @@
+import Toybox.Lang;
+
+typedef FormatDictionary as Dictionary<Number, Dictionary<Number, String>>;
+
 module Constants {
 
     const MAX_ACCOUNTS = 20;
@@ -11,7 +15,7 @@ module Constants {
     const CIRCLE_TIMER_COLOR_PROP = "CircleTimerColor";
     const CIRCLE_TIMER_ARROWS_PROP = "CircleTimerArrows";
 
-    const OTP_FORMAT = {
+    const OTP_FORMAT as FormatDictionary = {
         6 => {
             0 => "$1$$2$$3$$4$$5$$6$",          // TokenFormatFor6_xxxxxx
             1 => "$1$$2$$3$ $4$$5$$6$",         // TokenFormatFor6_xxx_xxx
