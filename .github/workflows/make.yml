@@ -1,0 +1,45 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "version-2" ]
+  pull_request:
+    branches: [ "version-2", "version-2-sdk-upgrade" ]
+
+env:
+  CIQ_SDK_DOWNLOAD_URL: https://developer.garmin.com/downloads/connect-iq
+  CIQ_SDK_MANAGER_DIR_URL: $CIQ_SDK_DOWNLOAD_URL/sdk-manager
+  CIQ_SDK_MANAGER_LIST_URL: $CIQ_SDK_MANAGER_DIR_URL/sdk-manager.json
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate a developer key
+        run: |
+          openssl genrsa -out developer_key.pem 4096
+          openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+
+      - name: Downloads ConnectIQ
+        env:
+          CIQ_SDK_MANAGER_URL: $CIQ_SDK_MANAGER_DIR_URL/$(curl -s "$CIQ_SDK_MANAGER_LIST_URL" | jq -r '.linux')
+        run: |
+          curl -s -L "${CIQ_SDK_MANAGER_URL}" -o "/connectiq-sdk-manager-linux.zip" \
+          mkdir -p "/opt/connectiq-sdk-manager-linux" \
+          cd "/opt/connectiq-sdk-manager-linux" \
+          unzip -q "/connectiq-sdk-manager-linux.zip" \
+          chmod -R go-w "/opt/connectiq-sdk-manager-linux"
+
+
+      - name: Create properties.mk
+        run: |
+          cp properties.mk.example properties.mk
+          # SDK_HOME
+          # DEVELOPER_KEY = ./developer_key
+
+      - name: Build
+        run: make build

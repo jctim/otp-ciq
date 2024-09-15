@@ -3,15 +3,16 @@ include properties.mk
 sources = `find source -name '*.mc'`
 resources = `find resources* -name '*.xml' | tr '\n' ':' | sed 's/.$$//'`
 appName = `grep entry manifest.xml | sed 's/.*entry="\([^"]*\).*/\1/'`
+# supported
 
 build:
-	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName).prg \
+	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$(DEVICE).prg \
 	-f ./monkey.jungle \
 	-y $(DEVELOPER_KEY) \
 	-d $(DEVICE)
 	
 build-test:
-	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-test.prg \
+	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$(DEVICE)-test.prg \
 	-f ./monkey.jungle \
 	--unit-test \
 	-y $(DEVELOPER_KEY) \
@@ -29,17 +30,17 @@ buildall:
 
 run: build
 	@$(SDK_HOME)/bin/connectiq &&\
-	$(SDK_HOME)/bin/monkeydo bin/$(appName).prg $(DEVICE)
+	$(SDK_HOME)/bin/monkeydo bin/$(appName)-$(DEVICE).prg $(DEVICE)
 
 test: build-test
 	@$(SDK_HOME)/bin/connectiq &&\
-	$(SDK_HOME)/bin/monkeydo bin/$(appName)-test.prg $(DEVICE) -t
+	$(SDK_HOME)/bin/monkeydo bin/$(appName)-$(DEVICE)-test.prg $(DEVICE) -t
 
 clean:
 	@rm -rf bin/*
 
 deploy: build
-	@cp bin/$(appName).prg $(DEPLOY)
+	@cp bin/$(appName)-$(DEVICE).prg $(DEPLOY)
 
 package:
 	@$(SDK_HOME)/bin/monkeyc --warn -e --output bin/$(appName).iq \
