@@ -8,8 +8,8 @@ on:
 
 env:
   CIQ_SDK_DOWNLOAD_URL: https://developer.garmin.com/downloads/connect-iq
-  CIQ_SDK_MANAGER_DIR_URL: ${CIQ_SDK_DOWNLOAD_URL}/sdk-manager
-  CIQ_SDK_MANAGER_LIST_URL: "$CIQ_SDK_MANAGER_DIR_URL/sdk-manager.json"
+  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
+  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
 
 jobs:
   build:
