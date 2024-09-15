@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "version-2","version-2-sdk-upgrade", "version-2-sdk-upgrade-ci" ]
+    branches: [ "version-2" ]
   pull_request:
-    branches: [ "version-2", "version-2-sdk-upgrade" ]
+    branches: [ "version-2", "version2-sdk-upgrade" ]
 
 env:
   CIQ_SDK_DOWNLOAD_URL: https://developer.garmin.com/downloads/connect-iq
