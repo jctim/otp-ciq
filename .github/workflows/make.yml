@@ -28,13 +28,12 @@ jobs:
         run: |
           CIQ_SDK_MANAGER_URL=${CIQ_SDK_MANAGER_DIR_URL}/$(curl -s "${CIQ_SDK_MANAGER_LIST_URL}" | jq -r '.linux')
           echo $CIQ_SDK_MANAGER_URL
-          pwd
           echo $HOME
-          curl -s -L "${CIQ_SDK_MANAGER_URL}" -o "./connectiq-sdk-manager-linux.zip"
-          mkdir -p "/opt/connectiq-sdk-manager-linux"
-          cd "/opt/connectiq-sdk-manager-linux"
-#          unzip -q "/connectiq-sdk-manager-linux.zip"
-#          chmod -R go-w "/opt/connectiq-sdk-manager-linux"
+          curl -s -L "${CIQ_SDK_MANAGER_URL}" -o $HOME/connectiq-sdk-manager-linux.zip
+          mkdir -p /opt/connectiq-sdk-manager-linux
+          cd /opt/connectiq-sdk-manager-linux
+          unzip -q $HOME/connectiq-sdk-manager-linux.zip
+          chmod -R go-w /opt/connectiq-sdk-manager-linux
 
 
       - name: Create properties.mk
