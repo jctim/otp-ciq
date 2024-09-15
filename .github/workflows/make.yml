@@ -32,8 +32,7 @@ jobs:
           cd /opt/connectiq-sdk-manager-linux
           unzip -q $HOME/connectiq-sdk-manager-linux.zip
           chmod -R go-w /opt/connectiq-sdk-manager-linux
-          ls -la /opt/connectiq-sdk-manager-linux/bin
-          ls -la /opt/connectiq-sdk-manager-linux/share
+          /opt/connectiq-sdk-manager-linux/bin/sdkmanager
 
       - name: Create properties.mk
         run: |
