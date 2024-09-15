@@ -26,7 +26,6 @@ jobs:
 #
       - name: Downloads ConnectIQ
         run: |
-#          curl -s "${CIQ_SDK_MANAGER_LIST_URL}"
           CIQ_SDK_MANAGER_URL=${CIQ_SDK_MANAGER_DIR_URL}/$(curl -s "${CIQ_SDK_MANAGER_LIST_URL}" | jq -r '.linux')
 #          curl -s -L "${CIQ_SDK_MANAGER_URL}" -o "/connectiq-sdk-manager-linux.zip"
 #          mkdir -p "/opt/connectiq-sdk-manager-linux"
