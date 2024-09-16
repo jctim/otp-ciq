@@ -1,6 +1,6 @@
 module Strings {
 
-    function isEmpty1(str1) {
+    function isEmpty(str) {
         return str == null || (str instanceof Toybox.Lang.String && str.length() == 0);
     }
 

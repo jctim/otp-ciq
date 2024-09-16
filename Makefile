@@ -1,9 +1,7 @@
 include properties.mk
 
-sources = `find source -name '*.mc'`
-resources = `find resources* -name '*.xml' | tr '\n' ':' | sed 's/.$$//'`
 appName = `grep entry manifest.xml | sed 's/.*entry="\([^"]*\).*/\1/'`
-# supported
+all_devices = `grep -Po 'product id="\K[^"]*' manifest.xml | tr '\n' ' '`
 
 build:
 	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$(DEVICE).prg \
@@ -19,7 +17,7 @@ build-test:
 	-d $(DEVICE)
 
 buildall:
-	@for device in $(SUPPORTED_DEVICES_LIST); do \
+	@for device in $(all_devices); do \
 		echo "-----"; \
 		echo "Building for" $$device; \
 	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$$device.prg \
