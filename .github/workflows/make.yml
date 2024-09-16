@@ -25,6 +25,7 @@ jobs:
       - name: Install ConnectIQ SDK
         run: |
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
+          /usr/local/bin/connect-iq-sdk-manager agreement view
 #          echo $CIQ_SDK_URL
 #          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
 #          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
