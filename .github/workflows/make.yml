@@ -33,12 +33,13 @@ jobs:
           connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
           connect-iq-sdk-manager login
           connect-iq-sdk-manager sdk set 6.2.0
+          echo "Current SDK `connect-iq-sdk-manager sdk current-path`"
           connect-iq-sdk-manager device download --manifest=manifest.xml
 
       - name: Create properties.mk
         run: |
           touch properties.mk
-          echo "SDK_HOME = `connect-iq-sdk-manager sdk current-path --bin`" >> properties.mk
+          echo "SDK_HOME = `connect-iq-sdk-manager sdk current-path`" >> properties.mk
           echo "DEVELOPER_KEY = `pwd`/developer_key.der" >> properties.mk
           echo "cat properties.mk"
           cat properties.mk
