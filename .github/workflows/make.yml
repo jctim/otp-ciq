@@ -34,6 +34,7 @@ jobs:
           echo $HASH
           /usr/local/bin/connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
           /usr/local/bin/connect-iq-sdk-manager login
+          connect-iq-sdk-manager sdk set ^6.2.0
 #          echo $CIQ_SDK_URL
 #          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
 #          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
