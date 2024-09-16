@@ -22,19 +22,18 @@ jobs:
           openssl genrsa -out developer_key.pem 4096
           openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
 
-      - name: Install ConnectIQ SDK
+      - name: Download and configure ConnectIQ SDK
         env: # Or as an environment variable
           GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
         run: |
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
-          /usr/local/bin/connect-iq-sdk-manager agreement view >> agreement.txt
-          cat agreement.txt
+          connect-iq-sdk-manager agreement view >> agreement.txt
           HASH=`grep -Po 'Current Hash: \K.*' agreement.txt`
-          echo $HASH
-          /usr/local/bin/connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
-          /usr/local/bin/connect-iq-sdk-manager login
-          connect-iq-sdk-manager sdk set ^6.2.0
+          connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
+          connect-iq-sdk-manager login
+          connect-iq-sdk-manager sdk set 6.2.0
+          connect-iq-sdk-manager device download --manifest=manifest.xml
 #          echo $CIQ_SDK_URL
 #          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
 #          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
