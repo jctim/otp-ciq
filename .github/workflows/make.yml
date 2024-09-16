@@ -7,11 +7,6 @@ on:
     branches: [ "version-2", "version2-sdk-upgrade" ]
 
 env:
-  #  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
-  #  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
-  CIQ_SDK_MANAGER_SDK_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdks/
-  CIQ_SDK_MANAGER_SDK_LIST: sdks.json
-  CIQ_SDK: connectiq-sdk-lin-6.2.0-2023-05-26-cc5fddb5d.zip
   CIQ_SDK_VERSION: 6.2.0
 
 jobs:
@@ -27,16 +22,16 @@ jobs:
           openssl genrsa -out developer_key.pem 4096
           openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
 
-      - name: Downloads ConnectIQ SDK
+      - name: Install ConnectIQ SDK
         run: |
-          CIQ_SDK_URL=${CIQ_SDK_MANAGER_SDK_DIR_URL}${CIQ_SDK}
-          echo $CIQ_SDK_URL
-          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
-          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-          cd /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-          unzip -q $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
-          chmod -R go-w /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-          echo ls -la /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+          curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
+#          echo $CIQ_SDK_URL
+#          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
+#          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+#          cd /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+#          unzip -q $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
+#          chmod -R go-w /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+#          echo ls -la /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
 
       - name: Create properties.mk
         run: |
