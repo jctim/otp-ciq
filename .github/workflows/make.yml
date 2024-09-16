@@ -32,7 +32,7 @@ jobs:
           HASH=`grep -Po 'Current Hash: \K.*' agreement.txt`
           connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
           connect-iq-sdk-manager login
-          connect-iq-sdk-manager sdk set 6.2.0
+          connect-iq-sdk-manager sdk set $CIQ_SDK_VERSION
           echo "Current SDK `connect-iq-sdk-manager sdk current-path`"
           connect-iq-sdk-manager device download --manifest=manifest.xml
 
