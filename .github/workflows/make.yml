@@ -42,7 +42,7 @@ jobs:
         run: |
           touch properties.mk
           echo "SDK_HOME = /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}" >> properties.mk
-          echo "DEVELOPER_KEY = (pwd)/developer_key" >> properties.mk
+          echo "DEVELOPER_KEY = `pwd`/developer_key" >> properties.mk
           echo "cat properties.mk"
           cat properties.mk
 
