@@ -27,9 +27,9 @@ jobs:
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
           /usr/local/bin/connect-iq-sdk-manager agreement view >> agreement.txt
           cat agreement.txt
-          HASH=`grep -Po ':\s\K.*' agreement.txt`
+          HASH=`grep -Po 'Current Hash: \K.*' agreement.txt`
           echo $HASH
-          /usr/local/bin/connect-iq-sdk-manager agreement accept --acceptance-hash=$HASH
+          /usr/local/bin/connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
           /usr/local/bin/connect-iq-sdk-manager login
 #          echo $CIQ_SDK_URL
 #          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
