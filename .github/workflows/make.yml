@@ -27,25 +27,18 @@ jobs:
           GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
         run: |
-          curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
+          curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh -s -- -d v0.7.1
           connect-iq-sdk-manager agreement view >> agreement.txt
           HASH=`grep -Po 'Current Hash: \K.*' agreement.txt`
           connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
           connect-iq-sdk-manager login
           connect-iq-sdk-manager sdk set 6.2.0
           connect-iq-sdk-manager device download --manifest=manifest.xml
-#          echo $CIQ_SDK_URL
-#          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
-#          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-#          cd /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-#          unzip -q $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
-#          chmod -R go-w /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
-#          echo ls -la /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
 
       - name: Create properties.mk
         run: |
           touch properties.mk
-          echo "SDK_HOME = /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}" >> properties.mk
+          echo "SDK_HOME = `connect-iq-sdk-manager sdk current-path --bin`" >> properties.mk
           echo "DEVELOPER_KEY = `pwd`/developer_key.der" >> properties.mk
           echo "cat properties.mk"
           cat properties.mk
