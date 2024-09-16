@@ -7,8 +7,12 @@ on:
     branches: [ "version-2", "version2-sdk-upgrade" ]
 
 env:
-  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
-  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
+  #  CIQ_SDK_MANAGER_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager
+  #  CIQ_SDK_MANAGER_LIST_URL: https://developer.garmin.com/downloads/connect-iq/sdk-manager/sdk-manager.json
+  CIQ_SDK_MANAGER_SDK_DIR_URL: https://developer.garmin.com/downloads/connect-iq/sdks/
+  CIQ_SDK_MANAGER_SDK_LIST: sdks.json
+  CIQ_SDK: connectiq-sdk-lin-6.2.0-2023-05-26-cc5fddb5d.zip
+  CIQ_SDK_VERSION: 6.2.0
 
 jobs:
   build:
@@ -18,27 +22,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      #      - name: Generate a developer key
-      #        run: |
-      #          openssl genrsa -out developer_key.pem 4096
-      #          openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
-      #
-      - name: Downloads ConnectIQ
+      - name: Generate a developer key
         run: |
-          CIQ_SDK_MANAGER_URL=${CIQ_SDK_MANAGER_DIR_URL}/$(curl -s "${CIQ_SDK_MANAGER_LIST_URL}" | jq -r '.linux')
-          echo $CIQ_SDK_MANAGER_URL
-          curl -s -L "${CIQ_SDK_MANAGER_URL}" -o $HOME/connectiq-sdk-manager-linux.zip
-          mkdir -p /opt/connectiq-sdk-manager-linux
-          cd /opt/connectiq-sdk-manager-linux
-          unzip -q $HOME/connectiq-sdk-manager-linux.zip
-          chmod -R go-w /opt/connectiq-sdk-manager-linux
-          /opt/connectiq-sdk-manager-linux/bin/sdkmanager
+          openssl genrsa -out developer_key.pem 4096
+          openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+
+      - name: Downloads ConnectIQ SDK
+        run: |
+          CIQ_SDK_URL=${CIQ_SDK_MANAGER_SDK_DIR_URL}${CIQ_SDK}
+          echo $CIQ_SDK_URL
+          curl -s -L "${CIQ_SDK_URL}" -o $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
+          mkdir -p /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+          cd /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+          unzip -q $HOME/connectiq-sdk-lin-${CIQ_SDK_VERSION}.zip
+          chmod -R go-w /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
+          echo ls -la /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}
 
       - name: Create properties.mk
         run: |
-          cp properties.mk.example properties.mk
-          # SDK_HOME
-          # DEVELOPER_KEY = ./developer_key
+          touch properties.mk
+          echo "SDK_HOME = /opt/connectiq-sdk-lin-${CIQ_SDK_VERSION}" >> properties.mk
+          echo "DEVELOPER_KEY = (pwd)/developer_key" >> properties.mk
+          echo "cat properties.mk"
+          cat properties.mk
 
       - name: Build
         run: make build
