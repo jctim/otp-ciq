@@ -27,7 +27,7 @@ jobs:
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
           /usr/local/bin/connect-iq-sdk-manager agreement view >> agreement.txt
           cat agreement.txt
-          HASH=`ggrep -Po ':\s\K.*' agreement.txt`
+          HASH=`grep -Po ':\s\K.*' agreement.txt`
           echo $HASH
           /usr/local/bin/connect-iq-sdk-manager agreement accept --acceptance-hash=$HASH
           /usr/local/bin/connect-iq-sdk-manager login
