@@ -23,6 +23,9 @@ jobs:
           openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
 
       - name: Install ConnectIQ SDK
+        env: # Or as an environment variable
+          GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
+          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
         run: |
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
           /usr/local/bin/connect-iq-sdk-manager agreement view >> agreement.txt
