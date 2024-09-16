@@ -47,4 +47,4 @@ jobs:
           cat properties.mk
 
       - name: Build
-        run: make build
+        run: make package
