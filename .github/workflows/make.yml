@@ -1,0 +1,47 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "version-2" ]
+  pull_request:
+    branches: [ "version-2", "version2-sdk-upgrade" ]
+
+env:
+  CIQ_SDK_VERSION: 6.2.0
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate a developer key
+        run: |
+          openssl genrsa -out developer_key.pem 4096
+          openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+
+      - name: Download and configure ConnectIQ SDK
+        env:
+          GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
+          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+        run: |
+          curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh -s -- -d v0.7.1
+          connect-iq-sdk-manager agreement view >> agreement.txt
+          HASH=`grep -Po 'Current Hash: \K.*' agreement.txt`
+          connect-iq-sdk-manager agreement accept --agreement-hash=$HASH
+          connect-iq-sdk-manager login
+          connect-iq-sdk-manager sdk set $CIQ_SDK_VERSION
+          connect-iq-sdk-manager device download --manifest=manifest.xml
+
+      - name: Create properties.mk
+        run: |
+          touch properties.mk
+          echo "SDK_HOME = `connect-iq-sdk-manager sdk current-path`" >> properties.mk
+          echo "DEVELOPER_KEY = `pwd`/developer_key.der" >> properties.mk
+          echo "cat properties.mk"
+          cat properties.mk
+
+      - name: Build
+        run: make buildall
