@@ -20,10 +20,10 @@ buildall:
 	@for device in $(all_devices); do \
 		echo "-----"; \
 		echo "Building for" $$device; \
-	$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$$device.prg \
-	-f ./monkey.jungle \
-	-y $(DEVELOPER_KEY) \
-	-d $$device; \
+		$(SDK_HOME)/bin/monkeyc --warn --output bin/$(appName)-$$device.prg \
+		-f ./monkey.jungle \
+		-y $(DEVELOPER_KEY) \
+		-d $$device || exit 1; \
 	done
 
 run: build
