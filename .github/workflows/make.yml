@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "version-2" ]
   pull_request:
-    branches: [ "version-2", "version2-sdk-upgrade" ]
+    branches: [ "version-2" ]
 
 env:
   CIQ_SDK_VERSION: 6.2.0
