@@ -44,4 +44,4 @@ jobs:
           cat properties.mk
 
       - name: Build
-        run: make package
+        run: make buildall
