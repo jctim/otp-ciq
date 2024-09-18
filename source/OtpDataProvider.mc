@@ -58,15 +58,15 @@ class OtpDataProvider {
         maxAccountIdx = -1;
 
         var accountsFromProperties = readAccountsFromProperties();
-        // migrate accounts from Storage if they exists 
-        // TODO add better explanation what is this for!
+        // Migration needed to move all secrets from storage to app settings.
+        // App Settings allow to define password fields in new SDKs, it helped to get rid of the ugly previous solution 
         var secretsMigrated = migrateSecretsToProperties(accountsFromProperties);
 
         // Sys.println("account secrets from storage: " + accountsSecretsFromStorgate);
         for (var i = 0; i < Constants.MAX_ACCOUNTS; i++) {
             var acc = accountsFromProperties[i];
             if (acc.enabled) {
-                enabledAccounts.add(new Account(true, acc.name, acc.secret, acc.digits, acc.lifetime));
+                enabledAccounts.add(acc);
                 sortAccounts(enabledAccounts);
             }
         }
@@ -120,7 +120,7 @@ class OtpDataProvider {
                 // if secret exists in storate but no in properties - copy it to the propertie
                 // otherwise keep existing secret in properties
                 if (Strings.isEmpty(acc.secret)) {
-                    Sys.println("secret of acc " + i + " is not empty in storage, will copy it to properties and clean the storage...");
+                    Sys.println("secret of acc " + i + " exsists in storage, will copy it to properties and clean the storage...");
                     acc.secret = accSecretToMigrate;
                     AppData.saveProperty(accSecretPropsKey, acc.secret); 
 
@@ -131,11 +131,11 @@ class OtpDataProvider {
             }
 
         }
-        Sys.println("accounts merged. secretsMigrated = " + secretsMigrated);
+        Sys.println("secrets migrated. done = " + secretsMigrated);
         return secretsMigrated;
     }
 
-    hidden function sortAccounts(accounts) {
+    hidden function sortAccounts(accounts as Array<Account>) {
         var tokensOrder = AppData.readProperty("TokensOrder") as Number;
         switch (tokensOrder) {
             case 0: // order by index, already sorted
@@ -159,9 +159,9 @@ class OtpDataProvider {
     //!
     //! @param [Toybox::Lang::String] str must not be null
     //! @return [Toybox::Lang::String] normalized string
-    hidden function normalizeSecret(str) as String {
-        var chars = str.toString().toUpper().toCharArray();
-        chars.removeAll(' ');
+    hidden function normalizeSecret(str as String) as String {
+        var chars = str.toUpper().toCharArray();
+        chars.removeAll(' ' as Object);
         // Yeah. Why not to use StringUtil::charArrayToString()?
         // Becasue there is a strage bug here probably in SDK:
         // StringUtil.charArrayToString() returns non empty String

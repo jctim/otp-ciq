@@ -1,5 +1,7 @@
 //! HMAC implementation with SHA1
 //! https://tools.ietf.org/html/rfc2104
+import Toybox.Lang;
+
 module Hmac {
 
     const BLOCK_SIZE = 64;
@@ -8,7 +10,7 @@ module Hmac {
     //! @param [Toybox::Lang::Array] key The byte array of secret key
     //! @param [Toybox::Lang::Array] text The byte array of message to be authenticated
     //! @return [Toybox::Lang::Array] the authentication code as byte array
-    function authenticateWithSha1(key, text) {
+    function authenticateWithSha1(key as Array<Number>, text as Array<Number>) as Array<Number> {
         if (key.size() > BLOCK_SIZE) {
             key = Sha1.encode(key);
         }

@@ -32,7 +32,7 @@ class OtpWidgetDelegate extends Ui.BehaviorDelegate {
     }
 
     function onMenu() as Boolean {
-        var enabledAccounts = dataProvider.getEnabledAccounts();
+        var enabledAccounts = dataProvider.getEnabledAccounts() as Array<Account>;
         if (enabledAccounts.size() == 0) {
             return false;
         }
