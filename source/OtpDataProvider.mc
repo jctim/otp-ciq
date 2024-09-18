@@ -73,10 +73,8 @@ class OtpDataProvider {
 
         if (enabledAccounts.size() != 0) {
             maxAccountIdx = enabledAccounts.size() - 1;
-            // if secretsMigrated == true - it was called from App.onSettingsChanged(). Need to reset it to the first token
-            // if secretsMigrated == false - it was called from constructor. Need to obtain it from Storage (if exists)
             if (secretsMigrated) {
-                currentAccountIdx = 0;
+                currentAccountIdx = 0; // if secretsMigrated - reset to 0. It can happen once
             } else {
                 currentAccountIdx = AppData.readStorageValue(Constants.CURRENT_ACC_IDX_KEY);
                 if (currentAccountIdx == null || currentAccountIdx  < 0 || currentAccountIdx > maxAccountIdx) {
