@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "version-2" ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   CIQ_SDK_VERSION: 6.2.0
 
