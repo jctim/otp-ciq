@@ -11,7 +11,7 @@ module OtpTest {
         var seed = "3132333435363738393031323334353637383930";
         var t0 = 0L;
         var x = 30L;
-        var testTime = [59L, 1111111109L, 1111111111L];
+        var testTime = [59, 1111111109, 1111111111];
         var expectedCodes = ["94287082", "07081804", "14050471"];
         var actualCodes = new [3];
 

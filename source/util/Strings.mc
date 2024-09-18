@@ -3,7 +3,7 @@ import Toybox.Lang;
 module Strings {
 
     function isEmpty(str) {
-        return str == null || (str instanceof String && str.length() == 0);
+        return str == null || (str instanceof Toybox.Lang.String && str.length() == 0);
     }
 
     //! compare two strings
