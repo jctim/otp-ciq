@@ -73,7 +73,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account1TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -94,7 +94,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account2TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -115,7 +115,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account3TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -136,7 +136,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account4TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -157,7 +157,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account5TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -178,7 +178,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account6TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -199,7 +199,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account7TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -220,7 +220,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account8TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -241,7 +241,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account9TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -262,7 +262,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account10TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -283,7 +283,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account11Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account11TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -304,7 +304,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account12Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account12TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -325,7 +325,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account13Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account13TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -346,7 +346,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account14Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account14TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -367,7 +367,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account15Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account15TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -388,7 +388,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account16Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account16TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -409,7 +409,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account17Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account17TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -430,7 +430,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account18Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account18TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -451,7 +451,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account19Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account19TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">
@@ -472,7 +472,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account20Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
     <setting propertyKey="@Properties.Account20TokenDigits" title="@Strings.AccountTokenDigits">
         <settingConfig type="list">

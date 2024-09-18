@@ -23,6 +23,16 @@ module AppData {
         }
     }
 
+    function deleteStorageValue(propertyName) {
+        if (App has :Storage && App.Storage has :deleteValue) {
+            App.Storage.deleteValue(propertyName);
+            return true;
+        } else {
+            App.getApp().deleteProperty(propertyName);
+            return true;
+        }
+    }
+
     function readProperty(propertyName) {
         if (App has :Properties) {
             try {

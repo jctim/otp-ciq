@@ -45,3 +45,6 @@ jobs:
 
       - name: Build
         run: make buildall
+
+      - name: Package
+        run: make package

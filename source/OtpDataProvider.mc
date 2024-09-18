@@ -58,24 +58,24 @@ class OtpDataProvider {
         maxAccountIdx = -1;
 
         var accountsFromProperties = readAccountsFromProperties();
-        var accountsSecretsFromStorgate = readAccountSecretsFromStorage();
-        
-        var settingsUpdatedByUser = mergeAccountsAndSecrets(accountsFromProperties, accountsSecretsFromStorgate);
+        // migrate accounts from Storage if they exists 
+        // TODO add better explanation what is this for!
+        var secretsMigrated = migrateSecretsToProperties(accountsFromProperties);
 
         // Sys.println("account secrets from storage: " + accountsSecretsFromStorgate);
         for (var i = 0; i < Constants.MAX_ACCOUNTS; i++) {
             var acc = accountsFromProperties[i];
             if (acc.enabled) {
-                enabledAccounts.add(new Account(true, acc.name, accountsSecretsFromStorgate[i], acc.digits, acc.lifetime));
+                enabledAccounts.add(new Account(true, acc.name, acc.secret, acc.digits, acc.lifetime));
                 sortAccounts(enabledAccounts);
             }
         }
 
         if (enabledAccounts.size() != 0) {
             maxAccountIdx = enabledAccounts.size() - 1;
-            // if settingsUpdatedByUser == true - it was called from App.onSettingsChanged(). Need to reset it to the first token
-            // if settingsUpdatedByUser == false - it was called from constructor. Need to obtain it from Storage (if exists)
-            if (settingsUpdatedByUser) {
+            // if secretsMigrated == true - it was called from App.onSettingsChanged(). Need to reset it to the first token
+            // if secretsMigrated == false - it was called from constructor. Need to obtain it from Storage (if exists)
+            if (secretsMigrated) {
                 currentAccountIdx = 0;
             } else {
                 currentAccountIdx = AppData.readStorageValue(Constants.CURRENT_ACC_IDX_KEY);
@@ -96,7 +96,7 @@ class OtpDataProvider {
         for (var accIdx = 1; accIdx <= Constants.MAX_ACCOUNTS; accIdx++) {
             var accEnabled  = AppData.readProperty("Account" + accIdx + "Enabled");
             var accName     = AppData.readProperty("Account" + accIdx + "Name");
-            var accSecret   = AppData.readProperty("Account" + accIdx + "Secret");
+            var accSecret   = normalizeSecret(AppData.readProperty("Account" + accIdx + "Secret"));
             var accDigits   = AppData.readProperty("Account" + accIdx + "TokenDigits");
             var accLifetime = AppData.readProperty("Account" + accIdx + "TokenLifetime");
 
@@ -106,47 +106,33 @@ class OtpDataProvider {
         return accounts;
     }
 
-    hidden function readAccountSecretsFromStorage() {
-        var accountSecrets = [];
-        for (var accIdx = 1; accIdx <= Constants.MAX_ACCOUNTS; accIdx++) {
-            var accSecret  = AppData.readStorageValue("Account" + accIdx + "SecretKey");
-            accSecret  = accSecret != null ? accSecret : "";
-
-            accountSecrets.add(accSecret);
-        }
-        // Sys.println("account secrets from storage: " + accountSecrets);
-        return accountSecrets;
-    }
-
-    hidden function mergeAccountsAndSecrets(accountsFromProperties as Array<Account>, accountSecretsFromStorgate as String) {
-        var secretsUpdatedByUser = false;
+    hidden function migrateSecretsToProperties(accountsFromProperties as Array<Account>) {
+        var secretsMigrated = false;
         for (var i = 0; i < Constants.MAX_ACCOUNTS; i++) {
             var acc = accountsFromProperties[i];
-            var accSecret = accountSecretsFromStorgate[i];
             var accIdx = i + 1;
+            var accSecretStorageKey = "Account" + accIdx + "SecretKey";
+            var accSecretPropsKey = "Account" + accIdx + "Secret";
 
-            // User didn't enter secret property in settings and it didn't exists in storage - it was set yet.
-            // just don't enable this account at all
-            if (acc.enabled && Strings.isEmpty(acc.secret) && Strings.isEmpty(accSecret) ) {
-                acc.enabled = false;
-                AppData.saveProperty("Account" + accIdx + "Enabled", acc.enabled);     // switch off this account
-            }
+            var accSecretToMigrate = AppData.readStorageValue(accSecretStorageKey);
 
-            // User updated secret property in settings - copy it to storage and clear in properties
-            if (!Strings.isEmpty(acc.secret)) {
-                Sys.println("secret of acc " + i + " is not empty in properties, will update storage with it and clean the property...");
-                accSecret = normalizeSecret(acc.secret);
-                acc.secret = "";
-                AppData.saveStorageValue("Account" + accIdx + "SecretKey", accSecret); // to update secret in app sotrage
-                AppData.saveProperty("Account" + accIdx + "Secret", acc.secret);       // to clear secret in app properties
+            if (!Strings.isEmpty(accSecretToMigrate)) {                
+                // if secret exists in storate but no in properties - copy it to the propertie
+                // otherwise keep existing secret in properties
+                if (Strings.isEmpty(acc.secret)) {
+                    Sys.println("secret of acc " + i + " is not empty in storage, will copy it to properties and clean the storage...");
+                    acc.secret = accSecretToMigrate;
+                    AppData.saveProperty(accSecretPropsKey, acc.secret); 
 
-                accountSecretsFromStorgate[i] = accSecret;                             // update array
-                secretsUpdatedByUser = true;
+                    secretsMigrated = true;
+                }
+                // delete secret from storage to not let migration start next time
+                AppData.deleteStorageValue(accSecretStorageKey);
             }
 
         }
-        Sys.println("accounts merged. settingsUpdatedByUser = " + secretsUpdatedByUser);
-        return secretsUpdatedByUser;
+        Sys.println("accounts merged. secretsMigrated = " + secretsMigrated);
+        return secretsMigrated;
     }
 
     hidden function sortAccounts(accounts) {
@@ -173,7 +159,7 @@ class OtpDataProvider {
     //!
     //! @param [Toybox::Lang::String] str must not be null
     //! @return [Toybox::Lang::String] normalized string
-    hidden function normalizeSecret(str) {
+    hidden function normalizeSecret(str) as String {
         var chars = str.toString().toUpper().toCharArray();
         chars.removeAll(' ');
         // Yeah. Why not to use StringUtil::charArrayToString()?
