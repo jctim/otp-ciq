@@ -26,10 +26,17 @@ jobs:
           openssl genrsa -out developer_key.pem 4096
           openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
 
+      - uses: actions/cache@v4
+        id: cache-sdk
+        with:
+          path: /usr/local/bin
+          key: ${{ runner.os }}-${{ hashFiles('manifest.xml') }}
+
       - name: Download and configure ConnectIQ SDK
         env:
           GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+        if: steps.cache-sdk.outputs.cache-hit != 'true'
         run: |
           curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh -s -- -d v0.7.1
           connect-iq-sdk-manager agreement view >> agreement.txt
