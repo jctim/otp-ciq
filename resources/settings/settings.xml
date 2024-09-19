@@ -66,423 +66,463 @@
 
 
     <!-- Account 1 -->
-    <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account1TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account1TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount1" title="@Strings.Account1">
+        <setting propertyKey="@Properties.Account1Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account1TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account1TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 2 -->
-    <setting propertyKey="@Properties.Account2Enabled" title="@Strings.Account2">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account2TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account2TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount2" title="@Strings.Account2">
+        <setting propertyKey="@Properties.Account2Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account2TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account2TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 3 -->
-    <setting propertyKey="@Properties.Account3Enabled" title="@Strings.Account3">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account3TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account3TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount3" title="@Strings.Account3">
+        <setting propertyKey="@Properties.Account3Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account3TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account3TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 4 -->
-    <setting propertyKey="@Properties.Account4Enabled" title="@Strings.Account4">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account4TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account4TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount4" title="@Strings.Account4">
+        <setting propertyKey="@Properties.Account4Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account4TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account4TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 5 -->
-    <setting propertyKey="@Properties.Account5Enabled" title="@Strings.Account5">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account5TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account5TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount5" title="@Strings.Account5">
+        <setting propertyKey="@Properties.Account5Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account5TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account5TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 6 -->
-    <setting propertyKey="@Properties.Account6Enabled" title="@Strings.Account6">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account6TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account6TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount6" title="@Strings.Account6">
+        <setting propertyKey="@Properties.Account6Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account6TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account6TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 7 -->
-    <setting propertyKey="@Properties.Account7Enabled" title="@Strings.Account7">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account7TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account7TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount7" title="@Strings.Account7">
+        <setting propertyKey="@Properties.Account7Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account7TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account7TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 8 -->
-    <setting propertyKey="@Properties.Account8Enabled" title="@Strings.Account8">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account8TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account8TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount8" title="@Strings.Account8">
+        <setting propertyKey="@Properties.Account8Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account8TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account8TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 9 -->
-    <setting propertyKey="@Properties.Account9Enabled" title="@Strings.Account9">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account9TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account9TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount9" title="@Strings.Account9">
+        <setting propertyKey="@Properties.Account9Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account9TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account9TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 10 -->
-    <setting propertyKey="@Properties.Account10Enabled" title="@Strings.Account10">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account10TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account10TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount10" title="@Strings.Account10">
+        <setting propertyKey="@Properties.Account10Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account10TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account10TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 11 -->
-    <setting propertyKey="@Properties.Account11Enabled" title="@Strings.Account11">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account11Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account11Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account11TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account11TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount11" title="@Strings.Account11">
+        <setting propertyKey="@Properties.Account11Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account11Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account11Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account11TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account11TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 12 -->
-    <setting propertyKey="@Properties.Account12Enabled" title="@Strings.Account12">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account12Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account12Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account12TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account12TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount12" title="@Strings.Account12">
+        <setting propertyKey="@Properties.Account12Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account12Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account12Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account12TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account12TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 13 -->
-    <setting propertyKey="@Properties.Account13Enabled" title="@Strings.Account13">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account13Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account13Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account13TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account13TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount13" title="@Strings.Account13">
+        <setting propertyKey="@Properties.Account13Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account13Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account13Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account13TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account13TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 14 -->
-    <setting propertyKey="@Properties.Account14Enabled" title="@Strings.Account14">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account14Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account14Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account14TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account14TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount14" title="@Strings.Account14">
+        <setting propertyKey="@Properties.Account14Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account14Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account14Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account14TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account14TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 15 -->
-    <setting propertyKey="@Properties.Account15Enabled" title="@Strings.Account15">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account15Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account15Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account15TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account15TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount15" title="@Strings.Account15">
+        <setting propertyKey="@Properties.Account15Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account15Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account15Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account15TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account15TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 16 -->
-    <setting propertyKey="@Properties.Account16Enabled" title="@Strings.Account16">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account16Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account16Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account16TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account16TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount16" title="@Strings.Account16">
+        <setting propertyKey="@Properties.Account16Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account16Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account16Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account16TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account16TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 17 -->
-    <setting propertyKey="@Properties.Account17Enabled" title="@Strings.Account17">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account17Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account17Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account17TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account17TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount17" title="@Strings.Account17">
+        <setting propertyKey="@Properties.Account17Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account17Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account17Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account17TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account17TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 18 -->
-    <setting propertyKey="@Properties.Account18Enabled" title="@Strings.Account18">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account18Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account18Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account18TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account18TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount18" title="@Strings.Account18">
+        <setting propertyKey="@Properties.Account18Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account18Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account18Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account18TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account18TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 19 -->
-    <setting propertyKey="@Properties.Account19Enabled" title="@Strings.Account19">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account19Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account19Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account19TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account19TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount19" title="@Strings.Account19">
+        <setting propertyKey="@Properties.Account19Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account19Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account19Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account19TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account19TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
     <!-- Account 20 -->
-    <setting propertyKey="@Properties.Account20Enabled" title="@Strings.Account20">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account20Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account20Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
-    <setting propertyKey="@Properties.Account20TokenDigits" title="@Strings.AccountTokenDigits">
-        <settingConfig type="list">
-            <listEntry value="6">@Strings.Digits6</listEntry>
-            <listEntry value="7">@Strings.Digits7</listEntry>
-            <listEntry value="8">@Strings.Digits8</listEntry>
-        </settingConfig>
-    </setting>
-    <setting propertyKey="@Properties.Account20TokenLifetime" title="@Strings.AccountTokenLifetime">
-        <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
-    </setting>
+    <group id="groupAccount20" title="@Strings.Account20">
+        <setting propertyKey="@Properties.Account20Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account20Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account20Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+        <setting propertyKey="@Properties.Account20TokenDigits" title="@Strings.AccountTokenDigits">
+            <settingConfig type="list">
+                <listEntry value="6">@Strings.Digits6</listEntry>
+                <listEntry value="7">@Strings.Digits7</listEntry>
+                <listEntry value="8">@Strings.Digits8</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.Account20TokenLifetime" title="@Strings.AccountTokenLifetime">
+            <settingConfig type="numeric" min="10" max="60" errorMessage="@Strings.AccountTokenLifetimeError" />
+        </setting>
+    </group>
 
 </settings>
