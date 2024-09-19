@@ -12,6 +12,5 @@ class OtpMenuDelegate extends Ui.MenuInputDelegate {
 
     function onMenuItem(item) {
         dataProvider.setCurrentAccountIdx(item);
-        return true;
     }
 }

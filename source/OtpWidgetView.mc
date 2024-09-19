@@ -46,15 +46,15 @@ class OtpWidgetView extends Ui.View {
         var fgColor = AppData.readProperty(Constants.FG_COLOR_PROP);
 
         if (currentOtp != null) {
-            var viewName = View.findDrawableById("NameLabel");
+            var viewName = View.findDrawableById("NameLabel") as Ui.Text;
             viewName.setColor(fgColor);
             viewName.setText(currentOtp.name);
 
-            var viewCode = View.findDrawableById("CodeLabel");
+            var viewCode = View.findDrawableById("CodeLabel") as Ui.Text;
             viewCode.setColor(fgColor);
             viewCode.setText(currentOtp.token);
         } else {
-            var viewName = View.findDrawableById("NameLabel");
+            var viewName = View.findDrawableById("NameLabel") as Ui.Text;
             viewName.setColor(fgColor);
             viewName.setFont(Gfx.FONT_XTINY);
             viewName.setText("No Accounts\nSet up in app settings");
