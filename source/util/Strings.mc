@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 module Strings {
 
     function isEmpty(str) {
@@ -11,7 +13,7 @@ module Strings {
     //! @return [Toybox::Lang::Number] comparison result: -1 if str1 < str2,
     //!                                                    0 if str1 == str2
     //!                                                    1 if str1 > str2
-    function compare(str1, str2) {
+    function compare(str1 as String, str2 as String) as Number {
         var arr1 = str1.toCharArray();
         var arr2 = str2.toCharArray();
         var idx1 = 0;

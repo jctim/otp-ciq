@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+import Toybox.Lang;
 
 class OtpWidgetDelegate extends Ui.BehaviorDelegate {
 
@@ -14,29 +15,34 @@ class OtpWidgetDelegate extends Ui.BehaviorDelegate {
         self.menuDelegate = new OtpMenuDelegate(dataProvider);
     }
 
-    function onKey(key) {
+    function onKey(key) as Boolean {
         if (key.getKey() == Ui.KEY_ENTER) {
             toNextOtpUi();
+            return true;
         }
+        return false;
     }
 
-    function onTap(evt) {
+    function onTap(evt) as Boolean {
         if (evt.getType() == Ui.CLICK_TYPE_TAP) {
             toNextOtpUi();
+            return true;
         }
+        return false;
     }
 
-    function onMenu() {
-        var enabledAccounts = dataProvider.getEnabledAccounts();
+    function onMenu() as Boolean {
+        var enabledAccounts = dataProvider.getEnabledAccounts() as Array<Account>;
         if (enabledAccounts.size() == 0) {
-            return;
+            return false;
         }
 
         var menuView = new Ui.Menu();
         for (var i = 0; i < enabledAccounts.size(); i++) {
-            menuView.addItem(enabledAccounts[i].name, i);
+            menuView.addItem(enabledAccounts[i].name, i as Symbol);
         }
         Ui.pushView(menuView, menuDelegate, Ui.SLIDE_UP);
+        return true;
     }
 
     hidden function toNextOtpUi() {
