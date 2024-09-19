@@ -30,7 +30,7 @@ jobs:
         id: cache-sdk
         with:
           path: |
-            /usr/local/bin
+            /usr/local/bin/connect-iq-sdk-manager
             ~/.Garmin/ConnectIQ
           key: ${{ runner.os }}-${{ env.CIQ_SDK_VERSION }}-${{ hashFiles('manifest.xml') }}
 
