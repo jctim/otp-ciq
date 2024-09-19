@@ -15,7 +15,7 @@ class OtpWidgetDelegate extends Ui.BehaviorDelegate {
         self.menuDelegate = new OtpMenuDelegate(dataProvider);
     }
 
-    function onKey(key) {
+    function onKey(key) as Boolean {
         if (key.getKey() == Ui.KEY_ENTER) {
             toNextOtpUi();
             return true;
@@ -23,7 +23,7 @@ class OtpWidgetDelegate extends Ui.BehaviorDelegate {
         return false;
     }
 
-    function onTap(evt) {
+    function onTap(evt) as Boolean {
         if (evt.getType() == Ui.CLICK_TYPE_TAP) {
             toNextOtpUi();
             return true;
@@ -31,7 +31,7 @@ class OtpWidgetDelegate extends Ui.BehaviorDelegate {
         return false;
     }
 
-    function onMenu() {
+    function onMenu() as Boolean {
         var enabledAccounts = dataProvider.getEnabledAccounts() as Array<Account>;
         if (enabledAccounts.size() == 0) {
             return false;

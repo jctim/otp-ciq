@@ -36,7 +36,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 2 -->
@@ -47,7 +47,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 3 -->
@@ -58,7 +58,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 4 -->
@@ -69,7 +69,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 5 -->
@@ -80,7 +80,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 6 -->
@@ -91,7 +91,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 7 -->
@@ -102,7 +102,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 8 -->
@@ -113,7 +113,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 9 -->
@@ -124,7 +124,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
     <!-- Account 10 -->
@@ -135,7 +135,7 @@
         <settingConfig type="alphaNumeric" />
     </setting>
     <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
-        <settingConfig type="alphaNumeric" />
+        <settingConfig type="password" />
     </setting>
 
 </settings>

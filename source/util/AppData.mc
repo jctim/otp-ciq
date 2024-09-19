@@ -16,10 +16,16 @@ module AppData {
     function saveStorageValue(propertyName, propertyValue) {
         if (App has :Storage && App.Storage has :setValue) {
             App.Storage.setValue(propertyName, propertyValue);
-            return true;
         } else {
             App.getApp().setProperty(propertyName, propertyValue);
-            return true;
+        }
+    }
+
+    function deleteStorageValue(propertyName) {
+        if (App has :Storage && App.Storage has :deleteValue) {
+            App.Storage.deleteValue(propertyName);
+        } else {
+            App.getApp().deleteProperty(propertyName);
         }
     }
 
@@ -42,15 +48,12 @@ module AppData {
         if (App has :Properties) {
             try {
                 App.Properties.setValue(propertyName, propertyValue);
-                return true;
             } catch (ex instanceof App.Properties.InvalidKeyException) {
                 // if the exception is throw then properties don't have that key
                 // return false as indicator the property was not saved
-                return false;
             }
         } else {
             App.getApp().setProperty(propertyName, propertyValue);
-            return true;
         }
     }
 }
