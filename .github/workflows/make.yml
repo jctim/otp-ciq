@@ -30,7 +30,7 @@ jobs:
         id: cache-sdk
         with:
           path: /usr/local/bin
-          key: ${{ runner.os }}-${{ hashFiles('manifest.xml') }}
+          key: ${{ runner.os }}-${{ env.CIQ_SDK_VERSION }}-${{ hashFiles('manifest.xml') }}
 
       - name: Download and configure ConnectIQ SDK
         env:
