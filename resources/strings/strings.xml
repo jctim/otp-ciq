@@ -60,6 +60,7 @@
     <string id="Account20">Account 20</string>
     
     <string id="AccountName">Account Name</string>
+    <string id="AccountEnabled">Account Enabled</string>
     <string id="AccountSecret">Account Secret Key</string>
     <string id="AccountTokenDigits">Token Digits</string>
     <string id="AccountTokenLifetime">Token Lifetime (in seconds)</string>
