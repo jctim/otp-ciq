@@ -29,7 +29,9 @@ jobs:
       - uses: actions/cache@v4
         id: cache-sdk
         with:
-          path: /usr/local/bin
+          path: |
+            /usr/local/bin
+            ~/.Garmin/ConnectIQ
           key: ${{ runner.os }}-${{ env.CIQ_SDK_VERSION }}-${{ hashFiles('manifest.xml') }}
 
       - name: Download and configure ConnectIQ SDK
