@@ -57,7 +57,7 @@ jobs:
           cat properties.mk
 
       - name: Build
-        run: make build DEVICE=venu2
+        run: make buildall
 
-      # - name: Package
-      #   run: make package
+      - name: Package
+        run: make package
