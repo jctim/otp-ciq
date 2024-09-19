@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+import Toybox.Lang;
 
 class OtpWidgetDelegate extends Ui.BehaviorDelegate {
 
