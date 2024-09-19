@@ -36,7 +36,7 @@ test:
 	$(SDK_HOME)/bin/monkeydo bin/$(APP_NAME)-$(DEVICE)-test.prg $(DEVICE) -t
 
 clean:
-	@rm bin/*
+	@rm -rf bin/*
 
 deploy: build
 	@cp bin/$(APP_NAME)-$(DEVICE).prg $(DEPLOY)
