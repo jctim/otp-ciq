@@ -29,113 +29,133 @@
     </setting>
 
     <!-- Account 1 -->
-    <setting propertyKey="@Properties.Account1Enabled" title="@Strings.Account1Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount1" title="@Strings.Account1">
+        <setting propertyKey="@Properties.Account1Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account1Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account1Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 2 -->
-    <setting propertyKey="@Properties.Account2Enabled" title="@Strings.Account2Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount2" title="@Strings.Account2">
+        <setting propertyKey="@Properties.Account2Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account2Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account2Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 3 -->
-    <setting propertyKey="@Properties.Account3Enabled" title="@Strings.Account3Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount3" title="@Strings.Account3">
+        <setting propertyKey="@Properties.Account3Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account3Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account3Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 4 -->
-    <setting propertyKey="@Properties.Account4Enabled" title="@Strings.Account4Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount4" title="@Strings.Account4">
+        <setting propertyKey="@Properties.Account4Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account4Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account4Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 5 -->
-    <setting propertyKey="@Properties.Account5Enabled" title="@Strings.Account5Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount5" title="@Strings.Account5">
+        <setting propertyKey="@Properties.Account5Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account5Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account5Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 6 -->
-    <setting propertyKey="@Properties.Account6Enabled" title="@Strings.Account6Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount6" title="@Strings.Account6">
+        <setting propertyKey="@Properties.Account6Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account6Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account6Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 7 -->
-    <setting propertyKey="@Properties.Account7Enabled" title="@Strings.Account7Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount7" title="@Strings.Account7">
+        <setting propertyKey="@Properties.Account7Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account7Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account7Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 8 -->
-    <setting propertyKey="@Properties.Account8Enabled" title="@Strings.Account8Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount8" title="@Strings.Account8">
+        <setting propertyKey="@Properties.Account8Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account8Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account8Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 9 -->
-    <setting propertyKey="@Properties.Account9Enabled" title="@Strings.Account9Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount9" title="@Strings.Account9">
+        <setting propertyKey="@Properties.Account9Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account9Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account9Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
     <!-- Account 10 -->
-    <setting propertyKey="@Properties.Account10Enabled" title="@Strings.Account10Enabled">
-        <settingConfig type="boolean" />
-    </setting>
-    <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
-        <settingConfig type="alphaNumeric" />
-    </setting>
-    <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
-        <settingConfig type="password" />
-    </setting>
+    <group id="groupAccount10" title="@Strings.Account10">
+        <setting propertyKey="@Properties.Account10Enabled" title="@Strings.AccountEnabled">
+            <settingConfig type="boolean" />
+        </setting>
+        <setting propertyKey="@Properties.Account10Name" title="@Strings.AccountName">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.Account10Secret" title="@Strings.AccountSecret">
+            <settingConfig type="password" />
+        </setting>
+    </group>
 
 </settings>

@@ -14,18 +14,19 @@
     <string id="ColorBlue">Blue</string>
     <string id="ColorGreen">Green</string>
 
-    <string id="Account1Enabled">Account 1</string>
-    <string id="Account2Enabled">Account 2</string>
-    <string id="Account3Enabled">Account 3</string>
-    <string id="Account4Enabled">Account 4</string>
-    <string id="Account5Enabled">Account 5</string>
-    <string id="Account6Enabled">Account 6</string>
-    <string id="Account7Enabled">Account 7</string>
-    <string id="Account8Enabled">Account 8</string>
-    <string id="Account9Enabled">Account 9</string>
-    <string id="Account10Enabled">Account 10</string>
-    
+    <string id="Account1">Account 1</string>
+    <string id="Account2">Account 2</string>
+    <string id="Account3">Account 3</string>
+    <string id="Account4">Account 4</string>
+    <string id="Account5">Account 5</string>
+    <string id="Account6">Account 6</string>
+    <string id="Account7">Account 7</string>
+    <string id="Account8">Account 8</string>
+    <string id="Account9">Account 9</string>
+    <string id="Account10">Account 10</string>
+
     <string id="AccountName">Account Name</string>
+    <string id="AccountEnabled">Account Enabled</string>
     <string id="AccountSecret">Account Secret Key</string>
 
 </strings>
