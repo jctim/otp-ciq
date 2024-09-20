@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  CIQ_SDK_VERSION: 6.2.0
+  CIQ_SDK_VERSION: 6.2.2
 
 jobs:
   build:
