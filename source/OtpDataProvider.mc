@@ -89,9 +89,17 @@ class OtpDataProvider {
             var accNameProp    = "Account" + accIdx + "Name";
             var accSecretProp  = "Account" + accIdx + "Secret";
 
+            Sys.println("accEnabledProp: " + accEnabledProp);
+            Sys.println("accNameProp: " + accNameProp);
+            Sys.println("accSecretProp: " + accSecretProp);
+
             var accEnabled = AppData.readProperty(accEnabledProp);
             var accName    = AppData.readProperty(accNameProp);
             var accSecret  = normalizeSecret(AppData.readProperty(accSecretProp));
+
+            Sys.println("accEnabled: " + accEnabled);
+            Sys.println("accName: " + accName);
+            Sys.println("accSecret: " + accSecret);
 
             accounts.add(new Account(accEnabled, accName, accSecret));
         }
