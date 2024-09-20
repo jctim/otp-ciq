@@ -1,6 +1,8 @@
+import Toybox.Lang;
+
 module Convert {
 
-    function byteArrayToHexString(bytes) {
+    function byteArrayToHexString(bytes as Array<Number>) {
         var str = "";
         for (var i = 0; i < bytes.size(); i++) {
             str += bytes[i].format("%02X");
@@ -22,7 +24,7 @@ module Convert {
     const SHIFT = 5;
     const CSIZE = 8;
 
-    function base32decode2HexString(encoded) {
+    function base32decode2HexString(encoded as String) {
         var encodedChars = encoded.toUpper().toCharArray();
         var result = new [encodedChars.size() * SHIFT / CSIZE];
 

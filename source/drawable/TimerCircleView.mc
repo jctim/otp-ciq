@@ -2,6 +2,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.Application as App;
 using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
+import Toybox.Lang;
 
 class TimerCircleView extends Ui.Drawable {
 
@@ -54,7 +55,7 @@ class TimerCircleView extends Ui.Drawable {
         }
     }
 
-    function getCenterAndRadius(dc) {
+    function getCenterAndRadius(dc) as Array<Number> {
         return [dc.getWidth() / 2, dc.getHeight() / 2, dc.getWidth() / 2];
     }
 

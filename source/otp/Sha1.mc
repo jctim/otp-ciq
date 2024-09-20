@@ -2,6 +2,8 @@
 //! https://tools.ietf.org/html/rfc3174
 //! 
 //! Based on java implementation http://www.intertwingly.net/stories/2004/07/18/SHA1.java
+import Toybox.Lang;
+
 module Sha1 {
 
     const H = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
@@ -10,7 +12,7 @@ module Sha1 {
     //! Encode given byte array input to SHA1 hash as a byte array
     //! @param [Toybox::Lang::Array] input The byte array to be encrypted
     //! @return [Toybox::Lang::Array] computed SHA1 hash as byte array
-    function encode(input) {
+    function encode(input as Array<Number>) as Array<Number> {
         var inSize = input.size();
         var bloks = new [(((inSize + 8) >> 6) + 1) * 16];
         var bloksSize = bloks.size();
