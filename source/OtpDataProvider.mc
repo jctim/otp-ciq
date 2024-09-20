@@ -138,7 +138,7 @@ class OtpDataProvider {
     //! @return [Toybox::Lang::String] normalized string
     hidden function normalizeSecret(str as String) as String {
         var chars = str.toUpper().toCharArray();
-        chars.removeAll(' ' as Object);
+        chars.removeAll(' ');
         // Yeah. Why not to use StringUtil::charArrayToString()?
         // Becasue there is a strage bug here probably in SDK:
         // StringUtil.charArrayToString() returns non empty String

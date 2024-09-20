@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <settings>
 
     <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
