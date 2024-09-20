@@ -87,11 +87,11 @@ class OtpDataProvider {
         for (var accIdx = 1; accIdx <= Constants.MAX_ACCOUNTS; accIdx++) {
             var accEnabledProp = "Account" + accIdx + "Enabled";
             var accNameProp    = "Account" + accIdx + "Name";
-            var accSecretProp  = normalizeSecret("Account" + accIdx + "Secret");
+            var accSecretProp  = "Account" + accIdx + "Secret";
 
             var accEnabled = AppData.readProperty(accEnabledProp);
             var accName    = AppData.readProperty(accNameProp);
-            var accSecret  = AppData.readProperty(accSecretProp);
+            var accSecret  = normalizeSecret(AppData.readProperty(accSecretProp));
 
             accounts.add(new Account(accEnabled, accName, accSecret));
         }
@@ -107,7 +107,9 @@ class OtpDataProvider {
             var accSecretStorageKey = "Account" + accIdx + "SecretKey";
             var accSecretPropsKey = "Account" + accIdx + "Secret";
 
+            Sys.println("account " + accIdx); 
             var accSecretToMigrate = AppData.readStorageValue(accSecretStorageKey);
+            Sys.println("secret to migrate: " +  accSecretToMigrate);
 
             if (!isEmptyString(accSecretToMigrate)) {
                 // if secret exists in storate but no in properties - copy it to the propertie
@@ -137,6 +139,7 @@ class OtpDataProvider {
     //! @param [Toybox::Lang::String] str must not be null
     //! @return [Toybox::Lang::String] normalized string
     hidden function normalizeSecret(str as String) as String {
+        System.println("normalize " + str);
         var chars = str.toUpper().toCharArray();
         chars.removeAll(' ');
         // Yeah. Why not to use StringUtil::charArrayToString()?
@@ -147,6 +150,7 @@ class OtpDataProvider {
         for (var i = 0; i < chars.size(); i++) {
             outStr += chars[i];
         }
+        System.println("normalized " + outStr);
         return outStr;
 
     }
