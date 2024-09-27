@@ -56,13 +56,13 @@ jobs:
           echo "cat properties.mk"
           cat properties.mk
 
-      - name: Test on one device
+      - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libwebkit2gtk-4.0-37
-          export MB_SDK_HOME=`connect-iq-sdk-manager sdk current-path`
-          export MB_HOME="$MB_SDK_HOME"bin
-          ls -l "$MB_HOME"
+          sudo apt-get install -y libgtk-3-0 libgdk-pixbuf2.0-0 xvfb
+
+      - name: Test on one device
+        run: |
           Xvfb :99 -screen 0 1024x768x16 &
           export DISPLAY=:99
           make build-test test DEVICE=venu2
