@@ -60,10 +60,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y gdb libwebkit2gtk-4.0-37
-          export MB_HOME=`connect-iq-sdk-manager sdk current-path`
+          export MB_SDK_HOME=`connect-iq-sdk-manager sdk current-path`
+          export MB_HOME="$MB_SDK_HOME"bin
           ls -l "$MB_HOME"
-          ls -l "$MB_HOME"bin
-          gdb --args "$MB_HOME"bin/simulator
+          gdb --args "$MB_HOME"simulator
           make build-test test DEVICE=venu2
 
       - name: Build
