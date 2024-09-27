@@ -56,6 +56,9 @@ jobs:
           echo "cat properties.mk"
           cat properties.mk
 
+      - name: Test on one device
+        run: make build-test test DEVICE=venu2
+
       - name: Build
         run: make build-all
 
