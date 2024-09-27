@@ -59,12 +59,12 @@ jobs:
       - name: Test on one device
         run: |
           sudo apt-get update
-          sudo apt-get install -y gdb libwebkit2gtk-4.0-37
+          sudo apt-get install -y xvfb libwebkit2gtk-4.0-37
           export MB_SDK_HOME=`connect-iq-sdk-manager sdk current-path`
           export MB_HOME="$MB_SDK_HOME"bin
-          export DISPLAY=:0
           ls -l "$MB_HOME"
-          gdb --args "$MB_HOME"/simulator
+          Xvfb :99 -screen 0 1024x768x16 &
+          export DISPLAY=:99
           make build-test test DEVICE=venu2
 
       - name: Build
