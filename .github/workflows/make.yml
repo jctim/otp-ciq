@@ -59,9 +59,10 @@ jobs:
       - name: Test on one device
         run: |
           sudo apt-get update
-          sudo apt-get install -y gdb libwebkit2gtk-4.0-37
-          gdb --args "$MB_HOME"/simulator
+#          sudo apt-get install -y gdb libwebkit2gtk-4.0-37
+          echo $MB_HOME
           ls -l "$MB_HOME"/simulator
+#          gdb --args "$MB_HOME"/simulator
           make build-test test DEVICE=venu2
 
       - name: Build
