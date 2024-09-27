@@ -21,9 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: sudo apt-get install libwebkit2gtk-4.0-37
-
       - name: Generate a developer key
         run: |
           openssl genrsa -out developer_key.pem 4096
@@ -60,7 +57,11 @@ jobs:
           cat properties.mk
 
       - name: Test on one device
-        run: make build-test test DEVICE=venu2
+        run: |
+          sudo apt-get install libwebkit2gtk-4.0-37
+          gdb --args "$MB_HOME"/simulator
+          ls -l "$MB_HOME"/simulator
+          make build-test test DEVICE=venu2
 
       - name: Build
         run: make build-all
