@@ -59,6 +59,7 @@ jobs:
       - name: Test on one device
         run: |
           sudo apt-get update
+          export MB_HOME=`connect-iq-sdk-manager sdk current-path`
           echo $MB_HOME
           ls -l "$MB_HOME"/simulator
           make build-test test DEVICE=venu2
