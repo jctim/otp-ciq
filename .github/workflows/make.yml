@@ -59,12 +59,11 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgtk-3-0 libwebkit2gtk-4.0-37 libgdk-pixbuf2.0-0 at-spi2-core xvfb
+          sudo apt-get install -y libgtk-3-0 libgdk-pixbuf2.0-0 libwebkit2gtk-4.0-37 at-spi2-core xvfb
 
       - name: Test on one device
         run: |
-          export NO_AT_BRIDGE=1
-          Xvfb :99 -screen 0 1024x768x16 &
+          Xvfb :99 -screen 0 1280x1024x24 &
           export DISPLAY=:99
           make build-test test DEVICE=venu2
 
