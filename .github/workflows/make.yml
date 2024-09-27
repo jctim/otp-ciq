@@ -56,6 +56,17 @@ jobs:
           echo "cat properties.mk"
           cat properties.mk
 
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-0 libgdk-pixbuf2.0-0 libwebkit2gtk-4.0-37 at-spi2-core xvfb libjpeg-dev libpng-dev
+
+      - name: Test on one device
+        run: |
+          Xvfb :99 -screen 0 1280x1024x24 &
+          export DISPLAY=:99
+          make build-test test DEVICE=venu2
+
       - name: Build
         run: make build-all
 
