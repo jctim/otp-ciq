@@ -58,6 +58,8 @@ jobs:
 
       - name: Test on one device
         run: |
+          sudo apt-get update
+          sudo apt-get install -y gdb libwebkit2gtk-4.0-37
           export MB_HOME=`connect-iq-sdk-manager sdk current-path`
           ls -l "$MB_HOME"
           ls -l "$MB_HOME"bin
