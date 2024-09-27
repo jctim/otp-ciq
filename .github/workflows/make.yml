@@ -60,6 +60,9 @@ jobs:
         run: |
           export MB_HOME=`connect-iq-sdk-manager sdk current-path`
           echo $MB_HOME
+          echo $MB_HOME/bin
+          echo "$MB_HOME"bin
+          echo "$MB_HOME"bin/simulator
           ls -l "$MB_HOME"
           gdb --args "$MB_HOME"/simulator
           make build-test test DEVICE=venu2
